@@ -10,7 +10,7 @@ app.set('port', 6453);
 
 
 var cred_info = []
-var cheungke = { username: 'cheungke', password: 'abc1234', holdings =['VET', 'ETH'] }
+var cheungke = { username: 'cheungke', password: 'abc1234', holdings = { 'VET', 'ETH'} }
 
 
 app.get('/', function (req, res) {
