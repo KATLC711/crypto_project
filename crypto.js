@@ -14,14 +14,6 @@ app.set('view engine', 'handlebars');
 app.set('port', 6453);
 
 
-var login_cred = {
-    username: "cheungke",
-    pw: "abcd123",
-    firstName: "Kevin",
-    lastName: "Cheung",
-    Crypto: ["ETH", "VET"],
-    Holdings: [3.2, 500]
-};
 
 
 
