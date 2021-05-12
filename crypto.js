@@ -22,10 +22,7 @@ cred_info.push(cheungke)
 
 
 app.get('/', function (req, res) {
-    var context = []
-    context.greetings = 'Hello, Please enter your login credentials below:'
-    console.log(context.greetings)
-    res.render('home', context);
+    res.render('home');
 });
 
 
