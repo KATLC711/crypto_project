@@ -17,20 +17,15 @@ var cheungke = {
 }
 
 
+
 app.get('/', function (req, res) {
     res.render('home');
 });
 
 
 app.post('/login', function (req, res) {
-    var qParams = [];
-    for (var p in req.body) {
-        qParams.push({ 'name': p, 'value': req.body[p] })
-    }
-    console.log(qParams);
-    console.log(req.body);
-    var context = {};
-    context.dataList = qParams;
+
+    console.log(req.body.username)
     res.render('login');
 });
 
