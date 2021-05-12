@@ -22,7 +22,9 @@ cred_info.push(cheungke)
 
 
 app.get('/', function (req, res) {
-    res.render('home');
+    var context = []
+    context.greetings = 'Hello, Please enter your login credentials below:'
+    res.render('home', context);
 });
 
 
@@ -32,6 +34,7 @@ app.post('/', function (req, res) {
         res.render('login');
     } else {
         context = []
+        context.greetings = 'Your login credentials are not correct. Please retry.'
         res.render('home', context);
     }
 });
