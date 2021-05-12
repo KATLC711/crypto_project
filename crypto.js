@@ -24,7 +24,7 @@ app.post('/login', function (req, res) {
     console.log(req.body);
     var context = {};
     context.dataList = qParams;
-    res.render('login', context);
+    res.render('login');
 });
 
 
