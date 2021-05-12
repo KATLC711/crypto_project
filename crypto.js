@@ -15,8 +15,6 @@ app.set('port', 6453);
 
 
 
-
-
 app.get('/', function (req, res) {
     res.render('login', context);
 });
