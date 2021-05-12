@@ -34,8 +34,6 @@ app.post('/', function (req, res) {
         context = []
         res.render('home', context);
     }
-
-
 });
 
 
