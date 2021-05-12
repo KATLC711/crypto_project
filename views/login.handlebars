@@ -1,19 +1,14 @@
 <h1>Hello, Please fill in your login credentials below:</h1>
 <div>
     <h2>POST Request Form</h2>
-    <form action="http://flip1.engr.oregonstate.edu:3221/post-request?school=OSU&major=Computer Science" method="POST">
+    <form action="http://flip1.engr.oregonstate.edu:6453/" method="POST">
         <fieldset>
-            <legend>Personal Info</legend>
-            <label for="name"></label>
-            <input type="text" name="name" id="name" placeholder="What is your name?">
-            <label for="location"></label>
-            <input type="text" name="location" id="location" placeholder="Where do you live?">
-            <legend>Favourite Color:</legend>
-            <label for="color"> <input type="radio" name="color" value="Red"> Red </label>
-            <label for="color"> <input type="radio" name="color" value="Blue"> Blue </label>
-            <label for="color"> <input type="radio" name="color" value="Green"> Green </label>
-            <label for="color"> <input type="radio" name="color" value="Yellow"> Yellow </label>
-            <input type="submit" id="post-personal">
+            <legend>Login Info</legend>
+            <label for="username"></label>
+            <input type="text" name="username" id="username" placeholder="Username">
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Password">
+
         </fieldset>
     </form>
 </div>
