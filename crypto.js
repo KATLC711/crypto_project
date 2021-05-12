@@ -27,11 +27,22 @@ app.get('/', function (req, res) {
 
 
 app.post('/login', function (req, res) {
-
     console.log(req.body.username)
-    console.log(cred_info)
+    console.log(login_cred(req.body.username))
     res.render('login');
 });
+
+
+function login_cred(username_from_post) {
+    var i;
+    for (i = 0; i < cred_info.length; i++) {
+        if (cred_info[i].username === username_from_post) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 
 app.use(function (req, res) {
