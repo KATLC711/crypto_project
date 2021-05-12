@@ -17,6 +17,7 @@ var cheungke = {
     'password': 'abc1234',
     'holdings': ['VET', 'ETH']
 }
+cred_info.push(cheungke)
 
 
 
@@ -27,7 +28,8 @@ app.get('/', function (req, res) {
 
 app.post('/login', function (req, res) {
 
-    console.log(req.body)
+    console.log(req.body.username)
+    console.log(cred_info)
     res.render('login');
 });
 
