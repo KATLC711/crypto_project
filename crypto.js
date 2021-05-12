@@ -26,6 +26,7 @@ var nokkiu = {
 }
 
 cred_info.push(cheungke)
+cred_info.push(nokkiu)
 
 
 
