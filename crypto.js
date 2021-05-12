@@ -15,7 +15,8 @@ var cred_info = []
 var cheungke = {
     'username': 'cheungke',
     'password': 'abc1234',
-    'holdings': ['VET', 'ETH']
+    'holdings': ['VET', 'ETH'],
+    'amount': [5, 10]
 }
 cred_info.push(cheungke)
 
@@ -29,7 +30,16 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
     console.log(login_cred(req.body.username, req.body.password))
     if (login_cred(req.body.username, req.body.password)) {
-        res.render('login');
+
+
+        var qParams = [];
+
+
+
+
+        res.render('login', context);
+
+
     } else {
         var context = []
         context.greetings = 'Your login credentials are not correct. Please retry.'
@@ -43,10 +53,10 @@ function login_cred(username_from_post, password_from_post) {
     var i;
     for (i = 0; i < cred_info.length; i++) {
         if (cred_info[i].username == username_from_post && cred_info[i].password == password_from_post) {
-            return true;
+            return [true, "123"];
         }
     }
-    return false;
+    return [false, ""];
 }
 
 

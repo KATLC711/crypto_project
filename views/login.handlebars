@@ -1,1 +1,18 @@
-<h1>Login Successful!</h1>
+<h3>Here are your cryptocurrency holdings.</h3>
+<table border="border: 1px solid #333">
+    <thead>
+        <tr>
+            <th>Crypto Name/th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dataList}}
+        <tr>
+            <td>{{this.holdings}}</td>
+            <td>{{this.amount}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
