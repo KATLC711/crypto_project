@@ -27,16 +27,22 @@ app.get('/', function (req, res) {
 
 
 app.post('/login', function (req, res) {
-    console.log(req.body.username)
-    console.log(login_cred(req.body.username))
-    res.render('login');
+    console.log(login_cred(req.body.username, req.body.password))
+    if (login_cred(req.body.username, req.body.password)) {
+        res.render('login');
+    } else {
+        context = []
+        res.render('home', context);
+    }
+
+
 });
 
 
-function login_cred(username_from_post) {
+function login_cred(username_from_post, password_from_post) {
     var i;
     for (i = 0; i < cred_info.length; i++) {
-        if (cred_info[i].username === username_from_post) {
+        if (cred_info[i].username == username_from_post && cred_info[i].password == password_from_post) {
             return true;
         }
     }
