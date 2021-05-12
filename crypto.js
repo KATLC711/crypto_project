@@ -33,7 +33,7 @@ app.post('/', function (req, res) {
     if (login_cred(req.body.username, req.body.password)) {
         res.render('login');
     } else {
-        context = []
+        var context = []
         context.greetings = 'Your login credentials are not correct. Please retry.'
         res.render('home', context);
     }
