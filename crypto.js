@@ -26,7 +26,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.post('/login', function (req, res) {
+app.post('/', function (req, res) {
     console.log(login_cred(req.body.username, req.body.password))
     if (login_cred(req.body.username, req.body.password)) {
         res.render('login');
