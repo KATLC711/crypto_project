@@ -18,6 +18,13 @@ var cheungke = {
     'holdings': ['VET', 'ETH'],
     'amount': [5, 10]
 }
+var nokkiu = {
+    'username': 'nokkiu',
+    'password': '123456',
+    'holdings': ['BIT', 'ETH'],
+    'amount': [100, 10]
+}
+
 cred_info.push(cheungke)
 
 
