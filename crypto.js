@@ -35,12 +35,14 @@ app.post('/', function (req, res) {
 
         var holdings = user_info[1].holdings
         var amount = user_info[1].amount
-        var aParams
+        var cryprolist
 
         for (var i = 0; i < holdings.length; i++) {
-            qParams.push({ 'holdings': holdings[i], 'amount': amount[i] })
+            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
 
+        var context = []
+        context.cryprolist = cryprolist
 
         res.render('login', context);
 
