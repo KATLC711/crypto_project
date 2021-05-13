@@ -44,17 +44,17 @@ app.get('/', function (req, res) {
 
 
 
-app.post('/auth', function (request, response) {
-    var username = request.body.username;
-    var password = request.body.password;
-    user_info = login_cred(request.body.username, request.body.password);
+app.post('/auth', function (req, res) {
+    var username = req.body.username;
+    var password = rereqquest.body.password;
+    user_info = login_cred(req.body.username, req.body.password);
     if (user_info[0] == true) {
         var context = user_info
-        request.session.loggedin = true
-        response.redirect('/home')
+        req.session.loggedin = true
+        res.redirect('/home')
     } else {
 
-        response.render('relogin')
+        res.render('relogin')
     }
 });
 
@@ -63,9 +63,9 @@ app.post('/auth', function (request, response) {
 
 
 
-app.get('/home', function (request, response) {
+app.get('/home', function (req, res) {
 
-    if (request.session.loggedin) {
+    if (req.session.loggedin) {
 
         console.log(user_info)
 
@@ -92,10 +92,10 @@ app.get('/home', function (request, response) {
 
 
 
-        response.render('login', context);
+        res.render('login', context);
 
     } else {
-        response.redirect('/')
+        res.redirect('/')
     }
 
 
