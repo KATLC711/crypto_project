@@ -80,8 +80,8 @@ app.get('/home', function (req, res) {
             function handleGet(err, response, body) {
                 if (!err && response.statusCode < 400) {
 
-                    var price = JSON.parse(body[0]);
-                    console.log(price)
+                    var price = JSON.parse(body);
+                    console.log(price.ticker.price)
                 } else {
                     console.log(err);
                     console.log(response.statusCode);
