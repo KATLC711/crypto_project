@@ -3,6 +3,7 @@ var request = require('request');
 var app = express();
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
 var bodyParser = require('body-parser');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 var session = require('express-session');
 app.use(session({
