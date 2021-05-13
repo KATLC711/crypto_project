@@ -76,6 +76,7 @@ app.get('/home', function (req, res) {
 
         for (var i = 0; i < holdings.length; i++) {
             var api_req = new XMLHttpRequest();
+            api_req.setRequestHeader('Content-Type', 'application/json');
             api_req.open('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', false);
             var api_rep = JSON.parse(api_req.responseText);
             console.log(api_rep)
