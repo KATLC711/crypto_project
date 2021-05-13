@@ -77,7 +77,7 @@ app.get('/home', function (req, res) {
 
         for (var i = 0; i < holdings.length; i++) {
 
-            function() {
+            x = function () {
                 request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
 
                 function handleGet(err, response, body) {
