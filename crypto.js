@@ -4,6 +4,13 @@ var app = express();
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
 var bodyParser = require('body-parser');
 
+var session = require('express-session');
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.engine('handlebars', handlebars.engine);
@@ -49,7 +56,6 @@ app.post('/auth', function (request, response) {
         response.redirect('/')
     }
 });
-
 
 
 
