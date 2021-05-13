@@ -81,14 +81,14 @@ app.get('/home', function (req, res) {
                 if (!err && response.statusCode < 400) {
 
                     var price = JSON.parse(body).ticker.price;
-
+                    console.log(price)
                 } else {
                     console.log(err);
                     console.log(response.statusCode);
                 }
             }
 
-
+            console.log(price)
             cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': price })
         }
 
