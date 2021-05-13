@@ -81,7 +81,7 @@ app.get('/home', function (req, res) {
                 if (!err && response.statusCode < 400) {
 
                     var api_request = JSON.parse(body);
-                    console.log(api_request.ticker.price)
+                    console.log(api_request)
                 } else {
                     console.log(err);
                     console.log(response.statusCode);
