@@ -79,8 +79,9 @@ app.get('/home', function (req, res) {
             request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
             function handleGet(err, response, body) {
                 if (!err && response.statusCode < 400) {
-                    context.owm = body;
-                    console.log(context.owm)
+
+                    var price = JSON.parse(body);
+                    console.log(price)
                 } else {
                     console.log(err);
                     console.log(response.statusCode);
