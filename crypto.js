@@ -74,7 +74,7 @@ app.get('/home', function (req, res) {
         var amount = user_info[1].amount
         var cryprolist = []
 
-
+        var quote
         for (var i = 0; i < holdings.length; i++) {
 
             x = function () {
@@ -85,7 +85,7 @@ app.get('/home', function (req, res) {
 
                         var request_result = JSON.parse(body);
                         //console.log(request_result)
-                        var quote = request_result.ticker.price
+                        quote = request_result.ticker.price
                         console.log(quote)
                     } else {
                         console.log(err);
