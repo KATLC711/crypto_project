@@ -77,7 +77,7 @@ app.get('/home', function (request, response) {
         }
         var context = []
         context.cryprolist = cryprolist
-        response.render('home', context);
+        response.render('login', context);
 
     } else {
         response.redirect('/')
