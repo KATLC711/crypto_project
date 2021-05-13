@@ -74,21 +74,24 @@ app.get('/home', function (req, res) {
         var amount = user_info[1].amount
         var cryprolist = []
 
+
         for (var i = 0; i < holdings.length; i++) {
 
+            var quote
             request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
             function handleGet(err, response, body) {
                 if (!err && response.statusCode < 400) {
 
-                    var price = JSON.parse(body);
-                    console.log(price)
+                    var request_result = JSON.parse(body);
+                    console.log(request_result)
+                    quote = request_result.ticker.price
                 } else {
                     console.log(err);
                     console.log(response.statusCode);
                 }
             }
 
-
+            console.log(quote)
             cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
 
