@@ -80,8 +80,8 @@ app.get('/home', function (req, res) {
             function handleGet(err, response, body) {
                 if (!err && response.statusCode < 400) {
 
-                    var api_request = JSON.parse(body);
-                    console.log(api_request)
+                    var price = JSON.parse(body).ticker.price;
+                    console.log(price)
                 } else {
                     console.log(err);
                     console.log(response.statusCode);
@@ -89,7 +89,7 @@ app.get('/home', function (req, res) {
             }
 
 
-            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': price })
+            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
 
         context.cryprolist = cryprolist
