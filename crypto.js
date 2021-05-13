@@ -92,7 +92,7 @@ app.get('/home', function (req, res) {
                 }
             }
 
-            console.log(quote)
+            console.log("here")
             cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
 
