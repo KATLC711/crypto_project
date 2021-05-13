@@ -53,7 +53,7 @@ app.post('/auth', function (request, response) {
         request.session.loggedin = true
         response.redirect('/home')
     } else {
-        console.log("Wrong")
+
         response.render('relogin')
     }
 });
