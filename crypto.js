@@ -74,40 +74,39 @@ app.get('/home', function (req, res) {
         var amount = user_info[1].amount
         var cryprolist = []
 
-        var quote
-        for (var i = 0; i < holdings.length; i++) {
+        var quote = 0
 
-            x = function () {
-                request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
+        x = function () {
+            request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
 
-                function handleGet(err, response, body) {
-                    if (!err && response.statusCode < 400) {
+            function handleGet(err, response, body) {
+                if (!err && response.statusCode < 400) {
 
-                        var request_result = JSON.parse(body);
-                        //console.log(request_result)
-                        quote = request_result.ticker.price
-                        console.log(quote)
-                    } else {
-                        console.log(err);
-                        console.log(response.statusCode);
-                    }
+                    var request_result = JSON.parse(body);
+                    //console.log(request_result)
+                    quote = request_result.ticker.price
+                    console.log(quote)
+                } else {
+                    console.log(err);
+                    console.log(response.statusCode);
                 }
             }
-
-            console.log(quote)
-            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
 
-        context.cryprolist = cryprolist
-
-
-
-
-        res.render('login', context);
-
-    } else {
-        res.redirect('/')
+        console.log(quote)
+        cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
     }
+
+    context.cryprolist = cryprolist
+
+
+
+
+    res.render('login', context);
+
+} else {
+    res.redirect('/')
+}
 
 
 });
