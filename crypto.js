@@ -85,7 +85,7 @@ app.get('/home', function (req, res) {
 
         function handleGet(err, response, body) {
             if (!err && response.statusCode < 400) {
-                console.log(body)
+                console.log(body.ticker)
             } else {
                 console.log(err);
                 console.log(response.statusCode);
