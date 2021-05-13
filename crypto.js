@@ -78,6 +78,20 @@ app.get('/home', function (request, response) {
         }
         var context = []
         context.cryprolist = cryprolist
+
+        request('https://api.cryptonator.com/api/full/btc-usd', handleGet);
+
+        function handleGet(err, response, body) {
+            if (!err && response.statusCode < 400) {
+                console.log(body)
+            } else {
+                console.log(err);
+                console.log(response.statusCode);
+            }
+        }
+
+
+
         response.render('login', context);
 
     } else {
