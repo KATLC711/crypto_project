@@ -83,8 +83,9 @@ app.get('/home', function (req, res) {
                 if (!err && response.statusCode < 400) {
 
                     var request_result = JSON.parse(body);
-                    console.log(request_result)
+                    //console.log(request_result)
                     quote = request_result.ticker.price
+                    console.log(quote)
                 } else {
                     console.log(err);
                     console.log(response.statusCode);
