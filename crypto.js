@@ -100,7 +100,7 @@ app.get('/home', function (req, res) {
             console.log(api_req.responseText)
             //var api_rep = JSON.parse(api_req.responseText);
 
-            console.log(api_rep)
+
             cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
 
