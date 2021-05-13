@@ -85,7 +85,7 @@ app.get('/home', function (req, res) {
 
         function handleGet(err, response, body) {
             if (!err && response.statusCode < 400) {
-                console.log(body.price)
+                console.log(body)
             } else {
                 console.log(err);
                 console.log(response.statusCode);
