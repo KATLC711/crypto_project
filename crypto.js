@@ -46,7 +46,7 @@ app.get('/', function (req, res) {
 
 app.post('/auth', function (req, res) {
     var username = req.body.username;
-    var password = rereqquest.body.password;
+    var password = req.body.password;
     user_info = login_cred(req.body.username, req.body.password);
     if (user_info[0] == true) {
         var context = user_info
