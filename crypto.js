@@ -89,7 +89,7 @@ app.get('/home', function (req, res) {
             }
 
 
-            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
+            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': price })
         }
 
         context.cryprolist = cryprolist
