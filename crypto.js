@@ -74,8 +74,9 @@ app.get('/home', function (req, res) {
         var cryprolist = []
 
         for (var i = 0; i < holdings.length; i++) {
-            request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
-            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
+
+            var price = request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
+            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': price })
         }
         var context = []
         context.cryprolist = cryprolist
@@ -84,7 +85,7 @@ app.get('/home', function (req, res) {
 
         function handleGet(err, response, body) {
             if (!err && response.statusCode < 400) {
-                console.log(body)
+                return body.price
             } else {
                 console.log(err);
                 console.log(response.statusCode);
