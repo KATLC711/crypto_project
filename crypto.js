@@ -35,11 +35,32 @@ app.get('/', function (req, res) {
 });
 
 
-app.post('/', function (req, res) {
-    console.log(login_cred(req.body.username, req.body.password))
-    user_info = login_cred(req.body.username, req.body.password)
 
+
+app.post('/auth', function (request, response) {
+    var username = request.body.username;
+    var password = request.body.password;
+    user_info = login_cred(request.body.username, request.body.password);
     if (user_info[0] == true) {
+        var context = user_info
+        request.session.loggedin = true
+        response.redirect('/home')
+    } else {
+        response.redirect('/')
+    }
+});
+
+
+
+
+
+
+
+app.get('/home', function (request, response) {
+
+    if (request.session.loggedin) {
+
+        console.log(user_info)
 
         var holdings = user_info[1].holdings
         var amount = user_info[1].amount
@@ -48,20 +69,22 @@ app.post('/', function (req, res) {
         for (var i = 0; i < holdings.length; i++) {
             cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
-
         var context = []
         context.cryprolist = cryprolist
-
-        res.render('login', context);
-
+        response.render('home', context);
 
     } else {
-        var context = []
-        context.greetings = 'Your login credentials are not correct. Please retry.'
-        console.log(context.greetings)
-        res.render('home', context);
+        response.redirect('/')
     }
+
+
 });
+
+
+
+
+
+
 
 
 function login_cred(username_from_post, password_from_post) {
