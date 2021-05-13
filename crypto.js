@@ -77,7 +77,7 @@ app.get('/home', function (req, res) {
         for (var i = 0; i < holdings.length; i++) {
             var api_req = new XMLHttpRequest();
             api_req.open('GET', 'https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', false);
-            var api_rep = JSON.parse(api_req.responseText);
+            //var api_rep = JSON.parse(api_req.responseText);
             console.log(api_rep)
             cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
         }
