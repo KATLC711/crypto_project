@@ -78,7 +78,20 @@ app.get('/home', function (req, res) {
         var amount = user_info[1].amount
         var cryprolist = []
 
-
+        for (let i = 0, p = Promise.resolve(); i < holdings.length; i++) {
+            p = p.then(_ => new Promise(resolve =>
+                setTimeout(function () {
+                    axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd')
+                        .then((response) => {
+                            console.log('Here you are');
+                            crypto_response = response.data.ticker.price
+                            console.log(crypto_response)
+                        })
+                    console.log(i);
+                    resolve();
+                }, Math.random() * 1000)
+            ));
+        }
 
         //for (var i = 0; i < holdings.length; i++) {
 
