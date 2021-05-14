@@ -84,55 +84,19 @@ app.get('/home', function (req, res) {
             promises.push(
                 axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd').then(response => {
                     // do something with response
-                    crypto_price.push(response.data.ticker.price);
+                    cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': response.data.ticker.price })
+                    //crypto_price.push(response.data.ticker.price);
                 })
             )
         }
 
 
 
-        Promise.all(promises).then(() => console.log(crypto_price));
-        //for (var i = 0; i < holdings.length; i++) {
-
-        /*
-                    request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', handleGet);
-         
-                    function handleGet(err, response, body) {
-                        if (!err && response.statusCode < 400) {
-         
-                            var request_result = JSON.parse(body);
-                            //console.log(request_result)
-                            quote = request_result.ticker.price
-                            console.log(quote)
-                        } else {
-                            console.log(err);
-                            console.log(response.statusCode);
-                        }
-                    }
-         
-        */
-
-        /*
-         
-                    const axios = require('axios');
-                    const fs = require('fs').promises;
-         
-         
-                    axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd')
-                        .then((response) => {
-                            console.log('Here you are');
-                            crypto_response = response.data.ticker.price
-                            console.log(crypto_response)
-                        })
-         
-        */
-        //cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_response })
-
-        //}
+        Promise.all(promises).then(() => console.log(cryprolist));
 
 
-        context.cryprolist = cryprolist
-        res.render('login', context);
+        //context.cryprolist = cryprolist
+        //res.render('login', context);
 
     } else {
         res.redirect('/')
