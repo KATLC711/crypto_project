@@ -95,6 +95,7 @@ app.get('/home', function (req, res) {
             
             */
 
+
             request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', (error, response, body) => {
                 if (error) {
                     console.error(`Could not send request to API: ${error.message}`);
@@ -113,17 +114,17 @@ app.get('/home', function (req, res) {
                 cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
             }
 
+
+        }
         context.cryprolist = cryprolist
-
-
         res.render('login', context);
 
-        } else {
-            res.redirect('/')
-        }
+    } else {
+        res.redirect('/')
+    }
 
 
-    });
+});
 
 
 
