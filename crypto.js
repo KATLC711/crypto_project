@@ -96,24 +96,9 @@ app.get('/home', function (req, res) {
             */
 
 
-            request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', (error, response, body) => {
-                if (error) {
-                    console.error(`Could not send request to API: ${error.message}`);
-                    return;
-                }
 
-                if (response.statusCode != 200) {
-                    console.error(`Expected status code 200 but received ${response.statusCode}.`);
-                    return;
-                }
 
-                console.log('Successful!');
-                movies = JSON.parse(body);
-                console.log(movies)
-
-                cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
-            }
-
+            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
 
         }
         context.cryprolist = cryprolist
