@@ -81,16 +81,14 @@ app.get('/home', function (req, res) {
 
         for (let i = 0, p = Promise.resolve(); i < holdings.length; i++) {
             p = p.then(_ => new Promise(resolve =>
-                function () {
-                    axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd')
-                        .then((response) => {
-                            crypto_response = response.data.ticker.price
-                            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_response })
-                            console.log(i);
-                            resolve();
-                        })
+                axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd')
+                    .then((response) => {
+                        crypto_response = response.data.ticker.price
+                        cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_response })
+                        console.log(i);
+                        resolve();
+                    })
 
-                }
             ));
         }
 
