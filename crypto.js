@@ -93,6 +93,7 @@ app.get('/home', function (req, res) {
             ));
         }
 
+        console.log(crypto_price)
         //for (var i = 0; i < holdings.length; i++) {
 
         /*
