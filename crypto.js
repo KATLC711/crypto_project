@@ -81,8 +81,8 @@ app.get('/home', function (req, res) {
         for (let i = 0, p = Promise.resolve(); i < holdings.length; i++) {
             p = p.then(_ => new Promise(resolve =>
                 function () {
-                    console.log(i);
-                    resolve();
+
+                    resolve(console.log(i));
                 }
             ));
         }
