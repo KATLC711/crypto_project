@@ -58,7 +58,6 @@ app.post('/auth', function (req, res) {
         req.session.loggedin = true
         res.redirect('/home')
     } else {
-
         res.render('relogin')
     }
 });
@@ -90,10 +89,7 @@ app.get('/home', function (req, res) {
             )
         }
 
-
-
         Promise.all(promises).then(() => {
-
 
             for (i = 0; i < holdings.length; i++) {
                 cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price[i], 'value': amount[i] * crypto_price[i] })
@@ -101,16 +97,11 @@ app.get('/home', function (req, res) {
             context.cryprolist = cryprolist
             res.render('login', context);
         }
-
         );
-
-
-
 
     } else {
         res.redirect('/')
     }
-
 
 });
 
