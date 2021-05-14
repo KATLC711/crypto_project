@@ -114,6 +114,7 @@ app.get('/home', function (req, res) {
 
 
         }
+        console.log(cryprolist)
         context.cryprolist = cryprolist
         res.render('login', context);
 
