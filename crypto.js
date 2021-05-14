@@ -101,7 +101,7 @@ app.get('/home', function (req, res) {
             const fs = require('fs').promises;
 
 
-            axios.get('https://ghibliapi.herokuapp.com/films')
+            axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd')
                 .then((response) => {
                     console.log('Here you are');
                     console.log(response)
