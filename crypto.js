@@ -78,21 +78,20 @@ app.get('/home', function (req, res) {
         var amount = user_info[1].amount
         var cryprolist = []
         var crypto_price = []
+        var promises = []
 
-        for (let i = 0, p = Promise.resolve(); i < holdings.length; i++) {
-            p = p.then(_ => new Promise(resolve =>
-                axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd')
-                    .then(resolve => {
-                        crypto_response = response.data.ticker.price
-                        cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_response })
-                        console.log(i);
-                        resolve();
-                    })
-
-            ));
+        for (i = 0; i < holdings.length; i++) {
+            promises.push(
+                axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd').then(response => {
+                    // do something with response
+                    crypto_price.push(response.data.ticker.price);
+                })
+            )
         }
 
-        console.log(crypto_price)
+
+
+        Promise.all(promises).then(() => console.log(crypto_price)
         //for (var i = 0; i < holdings.length; i++) {
 
         /*
