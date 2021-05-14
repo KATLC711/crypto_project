@@ -110,14 +110,14 @@ app.get('/home', function (req, res) {
                 console.log('Here you are!');
                 crypto_json = JSON.parse(body);
                 console.log(crypto_json.ticker.price)
-                cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_json.ticker.price })
+                crypto_price = crypto_json.ticker.price
             });
 
 
 
 
 
-
+            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price })
 
 
         }
