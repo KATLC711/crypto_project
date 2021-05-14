@@ -75,15 +75,19 @@ app.get('/home', function (req, res) {
         var cryprolist = []
 
 
-        const delay = new Promise(resolve => {
-            setTimeout(() => {
-                resolve();
-            }, 5000);
-        })
-            .then(() => {
-                console.log('Done waiting.');
-            });
+        const delays = [1000, 2000, 5000, 3000, 500, 12000];
 
+        const delay = (milliseconds) => {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(milliseconds);
+                }, milliseconds);
+            });
+        }
+        delay(12000)
+            .then(milliseconds => {
+                console.log(`Done waiting ${milliseconds / 1000} seconds.`);
+            });
 
 
 
