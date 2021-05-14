@@ -107,11 +107,9 @@ app.get('/home', function (req, res) {
                     return;
                 }
 
-                console.log('Processing our list of movies');
+                console.log('Here you are!');
                 movies = JSON.parse(body);
-                movies.forEach(movie => {
-                    console.log(`${movie['title']}, ${movie['release_date']}`);
-                });
+                console.log(movies)
             });
 
 
