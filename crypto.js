@@ -92,7 +92,13 @@ app.get('/home', function (req, res) {
 
 
 
-        Promise.all(promises).then(() => console.log(crypto_price));
+        Promise.all(promises).then(() => {
+
+            console.log(crypto_price);
+            console.log(holdings);
+        }
+
+        );
 
 
         context.cryprolist = cryprolist
