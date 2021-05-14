@@ -96,7 +96,7 @@ app.get('/home', function (req, res) {
             */
 
 
-            request('https://ghibliapi.herokuapp.com/films', (error, response, body) => {
+            request('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd', (error, response, body) => {
                 if (error) {
                     console.error(`Could not send request to API: ${error.message}`);
                     return;
