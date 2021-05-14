@@ -80,10 +80,10 @@ app.get('/home', function (req, res) {
 
         for (let i = 0, p = Promise.resolve(); i < 10; i++) {
             p = p.then(_ => new Promise(resolve =>
-                function () {
+                setTimeout(function () {
                     console.log(i);
                     resolve();
-                }
+                }, i * 1000)
             ));
         }
 
