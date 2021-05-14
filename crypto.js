@@ -79,31 +79,11 @@ app.get('/home', function (req, res) {
         var cryprolist = []
 
 
-        const sendEmail = (userEmail) => {
-
-            return new Promise(async (resolve, reject) => {
-
-
-                resolve(`Email Sent to ${userEmail}`);
-
-
-            })
+        async function asyncFunc() {
+            return "Hey!";
         }
 
-
-
-        const sendEmails = async () => {
-
-            const userEmails = ['ganesh@gmail.com', 'john@gmail.com', 'Sam@gmail.com'];
-
-            const status = await Promise.all(userEmails.map(async email => await sendEmail(email)));
-
-            console.log("Status =>", status);
-
-        }
-
-        sendEmails();
-
+        asyncFunc()
 
         //for (var i = 0; i < holdings.length; i++) {
 
