@@ -4,7 +4,8 @@ var app = express();
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
 var bodyParser = require('body-parser');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var async = require("async");
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
 var session = require('express-session');
 app.use(session({
