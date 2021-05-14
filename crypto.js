@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
+const axios = require('axios');
+const fs = require('fs').promises;
 
 var session = require('express-session');
 app.use(session({
