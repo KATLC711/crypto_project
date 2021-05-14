@@ -84,7 +84,7 @@ app.get('/home', function (req, res) {
             promises.push(
                 axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd').then(response => {
                     // do something with response
-                    cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': response.data.ticker.price })
+                    crypto_price.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': response.data.ticker.price })
                     //crypto_price.push(response.data.ticker.price);
                 })
             )
@@ -92,7 +92,7 @@ app.get('/home', function (req, res) {
 
 
 
-        Promise.all(promises).then(() => console.log(cryprolist));
+        Promise.all(promises).then(() => console.log(crypto_price));
 
 
         //context.cryprolist = cryprolist
