@@ -104,7 +104,7 @@ app.get('/home', function (req, res) {
             axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd')
                 .then((response) => {
                     console.log('Here you are');
-                    crypto_response = response.data.ticker
+                    crypto_response = response.data.ticker.price
                     console.log(crypto_response)
                 })
 
