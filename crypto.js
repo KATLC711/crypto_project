@@ -75,21 +75,16 @@ app.get('/home', function (req, res) {
         var cryprolist = []
 
 
-        function getdata(url) {
-            return new Promise((resolve, reject) => {
-                fetch(url)
-                    .then((resp) => resp.json())
-                    .then((data) => {
-                        resolve(data)
-                    })
-            })
-        }
+        const delay = new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+            }, 5000);
+        })
+            .then(() => {
+                console.log('Done waiting.');
+            });
 
-        const promise1 = getdata('https://api.cryptonator.com/api/full/eth-usd')
-        const promise2 = getdata('https://api.cryptonator.com/api/full/vet-usd')
-        Promise.all([promise1, promise2]).then((values) => {
-            console.log(values);
-        });
+
 
 
         //for (var i = 0; i < holdings.length; i++) {
