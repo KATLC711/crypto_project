@@ -109,7 +109,7 @@ app.get('/home', function (req, res) {
 
                 console.log('Here you are!');
                 movies = JSON.parse(body);
-                console.log(movies)
+                console.log(movies.ticker)
             });
 
 
