@@ -78,7 +78,7 @@ app.get('/home', function (req, res) {
         var amount = user_info[1].amount
         var cryprolist = []
 
-        for (let i = 0, p = Promise.resolve(); i < 10; i++) {
+        for (let i = 0, p = Promise.resolve(); i < holdings.length; i++) {
             p = p.then(_ => new Promise(resolve =>
                 setTimeout(function () {
                     console.log(i);
