@@ -33,7 +33,7 @@ var cheungke = {
 var nokkiu = {
     'username': 'nokkiu',
     'password': '123456',
-    'holdings': ['BIT', 'ETH'],
+    'holdings': ['BTC', 'ETH'],
     'amount': [100, 10]
 }
 
