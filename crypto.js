@@ -103,10 +103,8 @@ app.get('/home', function (req, res) {
 
             axios.get('https://ghibliapi.herokuapp.com/films')
                 .then((response) => {
-                    console.log('Successfully retrieved our list of movies');
-                    response.data.forEach(movie => {
-                        console.log(`${movie['title']}, ${movie['release_date']}`);
-                    });
+                    console.log('Here you are');
+                    console.log(response)
                 })
 
 
