@@ -108,8 +108,8 @@ app.get('/home', function (req, res) {
                 }
 
                 console.log('Here you are!');
-                movies = JSON.parse(body);
-                console.log(movies.ticker)
+                crypto_json = JSON.parse(body);
+                console.log(crypto_json.ticker.price)
             });
 
 
