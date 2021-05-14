@@ -4,6 +4,7 @@ var app = express();
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
 var bodyParser = require('body-parser');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var async = require('async')
 
 var session = require('express-session');
 app.use(session({
@@ -77,7 +78,7 @@ app.get('/home', function (req, res) {
 
         const sendEmail = (userEmail) => {
 
-            return new Promise((resolve, reject) => {
+            return new Promise(async (resolve, reject) => {
 
 
                 resolve(`Email Sent to ${userEmail}`);
