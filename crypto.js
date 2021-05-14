@@ -82,7 +82,6 @@ app.get('/home', function (req, res) {
             p = p.then(_ => new Promise(resolve =>
                 setTimeout(function () {
 
-
                     console.log(holdings[i]);
                     resolve();
                 }, 1)
