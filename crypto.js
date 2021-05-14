@@ -91,7 +91,7 @@ app.get('/home', function (req, res) {
 
 
 
-        Promise.all(promises).then(() => console.log(crypto_price)
+        Promise.all(promises).then(() => console.log(crypto_price));
         //for (var i = 0; i < holdings.length; i++) {
 
         /*
