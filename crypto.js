@@ -75,20 +75,31 @@ app.get('/home', function (req, res) {
         var cryprolist = []
 
 
-        const delays = [1000, 2000, 5000, 3000, 500, 12000];
+        const sendEmail = (userEmail) => {
 
-        const delay = (milliseconds) => {
-            return new Promise(resolve => {
+            return new Promise(async (resolve, reject) => {
+
                 setTimeout(() => {
-                    resolve(milliseconds);
-                }, milliseconds);
-            });
-        }
-        delay(12000)
-            .then(milliseconds => {
-                console.log(`Done waiting ${milliseconds / 1000} seconds.`);
-            });
+                    // return(`Email Sent to ${userEmail}`);
+                    resolve(`Email Sent to ${userEmail}`);
+                }, 3000)
 
+            })
+        }
+
+
+
+        const sendEmails = async () => {
+
+            const userEmails = ['ganesh@gmail.com', 'john@gmail.com', 'Sam@gmail.com'];
+
+            const status = await Promise.all(userEmails.map(async email => await sendEmail(email)));
+
+            console.log("Status =>", status);
+
+        }
+
+        sendEmails();
 
 
         //for (var i = 0; i < holdings.length; i++) {
