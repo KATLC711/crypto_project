@@ -106,10 +106,11 @@ app.get('/home', function (req, res) {
                     console.log('Here you are');
                     crypto_response = response.data.ticker.price
                     console.log(crypto_response)
+                    cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_response })
                 })
 
 
-            cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i] })
+
 
 
         }
