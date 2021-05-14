@@ -77,12 +77,11 @@ app.get('/home', function (req, res) {
 
         const sendEmail = (userEmail) => {
 
-            return new Promise(async (resolve, reject) => {
+            return new Promise((resolve, reject) => {
 
-                setTimeout(() => {
-                    // return(`Email Sent to ${userEmail}`);
-                    resolve(`Email Sent to ${userEmail}`);
-                }, 3000)
+
+                resolve(`Email Sent to ${userEmail}`);
+
 
             })
         }
