@@ -78,12 +78,15 @@ app.get('/home', function (req, res) {
         var amount = user_info[1].amount
         var cryprolist = []
 
-
-        async function asyncFunc() {
-            return "Hey!";
+        for (let i = 0, p = Promise.resolve(); i < 10; i++) {
+            p = p.then(_ => new Promise(resolve =>
+                setTimeout(function () {
+                    console.log(i);
+                    resolve();
+                }, Math.random() * 1000)
+            ));
         }
 
-        asyncFunc()
 
         //for (var i = 0; i < holdings.length; i++) {
 
