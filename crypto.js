@@ -94,6 +94,10 @@ app.get('/home', function (req, res) {
 
         Promise.all(promises).then(() => {
 
+
+            for (i = 0; i < holdings.length; i++) {
+                cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price[i] })
+            }
             console.log(crypto_price);
             console.log(holdings);
         }
