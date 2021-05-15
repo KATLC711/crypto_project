@@ -153,7 +153,7 @@ app.get('/home', function (req, res) {
 app.get('/buy-sell', function (req, res) {
 
     if (req.session.loggedin) {
-        res.render('buy-sell');
+        res.render('buy-sell', context);
     } else {
         res.redirect('/')
     }
@@ -165,6 +165,8 @@ app.get('/buy-sell', function (req, res) {
 app.post('/purchaseorder', function (req, res) {
 
     if (req.session.loggedin) {
+        var context = []
+        context.status_msg_purchase = "Purchase in the record!"
         res.redirect('buy-sell');
     } else {
         res.redirect('/')
