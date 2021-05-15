@@ -180,7 +180,7 @@ app.post('/purchase-order', function (req, res) {
                     for (j = 0; j < cred_info[i].holdings.length; j++) {
                         if (cred_info[i].holdings[j] == crypto_name_purchased) {
                             console.log(typeof (cred_info[i].amount[j]))
-                            cred_info[i].amount[j] = +cred_info[i].amount[j] + crypto_amount_purchased
+                            cred_info[i].amount[j] = parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased)
                             console.log(typeof (cred_info[i].amount[j]))
                         }
 
