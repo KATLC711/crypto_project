@@ -64,11 +64,13 @@ app.post('/create_acount', function (req, res) {
         cred_info.push(new_user)
         console.log(cred_info)
         var context = []
-        context.status_msg = 'Account Created'
+        context.status_msg = 'Account Created.'
 
         res.render('home', context)
     } else {
-        res.render('home')
+        var context = []
+        context.status_msg = 'User ID exists.'
+        res.render('home', context)
     }
 });
 
