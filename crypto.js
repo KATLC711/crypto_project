@@ -173,8 +173,10 @@ app.post('/purchase-order', function (req, res) {
 
         console.log(user_info)
 
-        for (i = 0; i < user_info[1].holdings.length; i++) {
-            console.log(user_info[1].holdings[i])
+        if (check_crypto(user_info, crypto_name_purchased)[0]) {
+            console.log("Exists")
+        } else {
+            console.log("Do not exists")
         }
 
         context.status_msg_purchase = "Purchase in the record!"
@@ -186,7 +188,14 @@ app.post('/purchase-order', function (req, res) {
 });
 
 
-
+function check_crypto(user_info, crypto_name) {
+    for (i = 0; i < user_info[1].holdings.length; i++) {
+        if (user_info[1].holdings[i] == crypto_name) {
+            return [true, i]
+        }
+    }
+    return [false, nan]
+}
 
 
 
