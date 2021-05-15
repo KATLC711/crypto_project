@@ -171,8 +171,6 @@ app.post('/purchase-order', function (req, res) {
         var crypto_amount_purchased = req.body.amount;
         var crypto_cost_purchased = req.body.cost;
 
-        console.log(user_info)
-
 
         if (check_crypto(user_info, crypto_name_purchased)[0]) {
 
