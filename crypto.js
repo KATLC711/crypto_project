@@ -166,6 +166,12 @@ app.post('/purchase-order', function (req, res) {
 
     if (req.session.loggedin) {
         var context = []
+
+        var crypto_name_purchased = req.body.crypto_name;
+        var crypto_amount_purchased = req.body.amount;
+        var crypto_cost_purchased = req.body.cost;
+
+
         context.status_msg_purchase = "Purchase in the record!"
         res.render('buy-sell', context);
     } else {
