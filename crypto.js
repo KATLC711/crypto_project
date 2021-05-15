@@ -172,11 +172,17 @@ app.post('/purchase-order', function (req, res) {
         var crypto_cost_purchased = req.body.cost;
 
 
+
         if (check_crypto(user_info, crypto_name_purchased)[0]) {
 
             for (i = 0; i < cred_info.length; i++) {
                 if (user_info[1].username == cred_info[i].username) {
-                    cred_info[i].amount = cred_info[i].amount + crypto_amount_purchased
+                    for (j = 0; j < cred_info[i].holdings.length; j++) {
+                        if (cred_info[i].holdings[j] == crypto_name_purchased) {
+                            cred_info[i].amount[j] = cred_info[i].amount[j] + crypto_amount_purchased
+                        }
+
+                    }
                 }
             }
 
@@ -187,6 +193,10 @@ app.post('/purchase-order', function (req, res) {
         console.log(cred_info)
         context.status_msg_purchase = "Purchase in the record!"
         res.render('buy-sell', context);
+
+
+
+
     } else {
         res.redirect('/')
     }
