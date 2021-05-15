@@ -120,7 +120,9 @@ app.get('/home', function (req, res) {
 
             var all_crypto = []
 
-
+            for (i = 0; i < crypto_list.length; i++) {
+                all_crypto.push({ 'crypto_name': crypto_list[i], 'crypto_price': crypto_price[i] })
+            }
 
             for (i = 0; i < holdings.length; i++) {
                 for (j = 0; j < crypto_list.length; j++) {
@@ -133,7 +135,7 @@ app.get('/home', function (req, res) {
 
 
 
-            //context.all_crypto = all_crypto
+            context.all_crypto = all_crypto
             context.cryptoholdings = cryptoholdings
             res.render('login', context);
         }
