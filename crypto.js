@@ -189,7 +189,12 @@ app.post('/purchase-order', function (req, res) {
             }
 
         } else {
-            console.log("Do not exists")
+            for (i = 0; i < cred_info.length; i++) {
+                if (user_info[1].username == cred_info[i].username) {
+                    user_info[1].holdings.push(crypto_name_purchased)
+                    user_info[1].amount.push(crypto_amount_purchased)
+                }
+            }
         }
 
         console.log(cred_info)
