@@ -63,8 +63,10 @@ app.post('/create_acount', function (req, res) {
         new_user.amount = []
         cred_info.push(new_user)
         console.log(cred_info)
+        var context = []
+        context.status_msg = 'Account Created'
 
-        res.render('home')
+        res.render('home', context)
     } else {
         res.render('home')
     }
