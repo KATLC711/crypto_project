@@ -28,13 +28,13 @@ var cheungke = {
     'username': 'cheungke',
     'password': 'abc1234',
     'holdings': ['VET', 'ETH'],
-    'amount': [5, 10]
+    'amount': [5.00, 10.00]
 }
 var nokkiu = {
     'username': 'nokkiu',
     'password': '123456',
     'holdings': ['BTC', 'ETH'],
-    'amount': [100, 10]
+    'amount': [100.00, 10.00]
 }
 
 cred_info.push(cheungke)
