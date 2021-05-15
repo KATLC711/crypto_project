@@ -3,12 +3,10 @@
 <style>
     .purchase-form {
         border: 5px outset #2a6592;
-        height: 300px;
     }
 
     .sell-form {
         border: 5px outset #2a6592;
-        height: 300px;
     }
 </style>
 
@@ -16,33 +14,33 @@
 
 
 
+    <h2>Purchase Form</h1>
+        <div class="purchase-form">
 
-    <div class="purchase-form">
-        <h1>Purchase Form</h1>
-        <form action="/purhcase" method="POST">
-            <legend>Cryptocurrency:</legend>
-            <input list="crypto_name" name="crypto_name">
-            <datalist id="crypto_name">
-                <option value="BTC">
-                <option value="ETH">
-                <option value="BNB">
-                <option value="VET">
-                <option value="LINK">
-                <option value="ADA">
-                <option value="XLM">
-            </datalist>
-            </input>
-            <legend>Amount:</legend>
-            <input type="number" id="amount" name="amount">
-            <legend>Unit Cost:</legend>
-            <input type="number" id="cost" name="cost">
-            <br>
-            <input type="submit">
-        </form>
-    </div>
+            <form action="/purhcase" method="POST">
+                <legend>Cryptocurrency:</legend>
+                <input list="crypto_name" name="crypto_name">
+                <datalist id="crypto_name">
+                    <option value="BTC">
+                    <option value="ETH">
+                    <option value="BNB">
+                    <option value="VET">
+                    <option value="LINK">
+                    <option value="ADA">
+                    <option value="XLM">
+                </datalist>
+                </input>
+                <legend>Amount:</legend>
+                <input type="number" id="amount" name="amount">
+                <legend>Unit Cost:</legend>
+                <input type="number" id="cost" name="cost">
+                <br>
+                <input type="submit">
+            </form>
+        </div>
 
 
-    {{{status_msg}}}
+        {{{status_msg}}}
 
 
 </body>
