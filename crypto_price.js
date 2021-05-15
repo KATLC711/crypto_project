@@ -13,6 +13,7 @@ var crypto_list = ['BTC', 'ETH', 'BNB', 'VET', 'LINK', 'ADA', 'XLM']
 
 var crypto_price = []
 var promises = []
+var all_crypto = []
 
 
 for (let i = 0; i < crypto_list.length; i++) {
@@ -21,13 +22,22 @@ for (let i = 0; i < crypto_list.length; i++) {
 
         axios.get('https://api.cryptonator.com/api/full/' + crypto_list[i] + '-usd').then(response => {
 
-            let price = response.data.ticker.price
 
-            crypto_price.push(response)
+            all_crypto.push(response.data.ticker.base)
+            crypto_price.push(response.data.ticker.price)
 
 
         })
     )
 }
 
-Promise.all(promises).then(() => console.log(crypto_price));
+Promise.all(promises).then(() => {
+
+
+
+    console.log(all_crypto)
+    console.log(crypto_price)
+
+
+
+});
