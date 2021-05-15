@@ -44,6 +44,7 @@ var crypto_list = ['BTC', 'ETH', 'BNB', 'VET', 'LINK', 'ADA', 'XLM']
 
 
 app.get('/', function (req, res) {
+    req.session.loggedin = false
     res.render('home');
 });
 
