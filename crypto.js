@@ -47,6 +47,31 @@ app.get('/', function (req, res) {
 });
 
 
+app.get('/register', function (req, res) {
+    res.render('home');
+});
+
+
+app.post('/create_acount', function (req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    if (check_userid(username)) {
+        var new_user = new Object()
+        new_user.username = username
+        new_user.password = password
+        new_user.holdings = []
+        new_user.amount = []
+        cred_info.push(new_user)
+        console.log(cred_info)
+        var context = []
+        context.status_msg = 'Account Created'
+        res.render('/home', context)
+    } else {
+        res.render('/home')
+    }
+});
+
+
 
 
 app.post('/auth', function (req, res) {
@@ -61,8 +86,6 @@ app.post('/auth', function (req, res) {
         res.render('relogin')
     }
 });
-
-
 
 
 
@@ -119,6 +142,17 @@ function login_cred(username_from_post, password_from_post) {
         }
     }
     return [false, ""];
+}
+
+
+function check_userid(username_from_post) {
+    var i;
+    for (i = 0; i < cred_info.length; i++) {
+        if (cred_info[i].username == username_from_post) {
+            return false
+        }
+    }
+    return true
 }
 
 
