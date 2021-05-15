@@ -102,7 +102,7 @@ app.get('/home', function (req, res) {
         var context = []
         var holdings = user_info[1].holdings
         var amount = user_info[1].amount
-        var cryprolist = []
+        var cryptoholdings = []
         var crypto_price = []
         var promises = []
 
@@ -118,14 +118,24 @@ app.get('/home', function (req, res) {
 
         Promise.all(promises).then(() => {
 
+            var all_crypto = []
+
+            for (i = 0; i < crypto_list.length; i++) {
+                all_crypto.push({ 'crypto_name': crypto_list[i], 'crypto_price': crypto_price[i] })
+            }
+
             for (i = 0; i < holdings.length; i++) {
                 for (j = 0; j < crypto_list.length; j++) {
                     if (crypto_list[j] == holdings[i]) {
-                        cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price[j], 'value': amount[i] * crypto_price[j] })
+                        cryptoholdings.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price[j], 'value': amount[i] * crypto_price[j] })
                     }
                 }
             }
-            context.cryprolist = cryprolist
+
+
+
+            context.cryptoholdings = cryptoholdings
+            context.all_crypto = all_crypto
             res.render('login', context);
         }
         );
