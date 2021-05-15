@@ -166,7 +166,7 @@ app.post('/purchaseorder', function (req, res) {
 
 
 
-    res.render('buy-sell');
+    res.redirect('buy-sell');
 
 
 });
