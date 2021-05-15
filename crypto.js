@@ -163,7 +163,28 @@ app.get('/buy-sell', function (req, res) {
 
 
 app.post('/purchaseorder', function (req, res) {
-    if (req.session.loggedin) {
+
+
+
+    res.render('buy-sell');
+
+
+});
+
+
+
+
+/*
+if (req.session.loggedin) {
+
+    var crypto_name_purchased = req.body.crypto_name;
+    var crypto_amount_purchased = req.body.amount;
+    var crypto_cost_purchased = req.body.cost;
+
+    var context = []
+    context.status_msg_purchase = "Purchase in the record!"
+
+        if (req.session.loggedin) {
 
         var crypto_name_purchased = req.body.crypto_name;
         var crypto_amount_purchased = req.body.amount;
@@ -176,15 +197,11 @@ app.post('/purchaseorder', function (req, res) {
     } else {
         res.redirect('/')
     }
-});
+} else {
+    res.redirect('/')
+}
 
-
-
-
-
-
-
-
+*/
 
 
 
