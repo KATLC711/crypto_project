@@ -150,6 +150,18 @@ app.get('/home', function (req, res) {
 
 
 
+app.get('/purchase', function (req, res) {
+    res.render('purchase');
+});
+
+
+
+
+
+
+
+
+
 
 
 
