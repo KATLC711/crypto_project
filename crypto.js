@@ -108,9 +108,8 @@ app.get('/home', function (req, res) {
 
         for (i = 0; i < crypto_list.length; i++) {
             promises.push(
-                let request_name = crypto_list[i]
-                
-                axios.get('https://api.cryptonator.com/api/full/' + request_name + '-usd').then(response => {
+
+                axios.get('https://api.cryptonator.com/api/full/' + crypto_list[i] + '-usd').then(response => {
                     // do something with response
                     crypto_price.push(response.data.ticker.price)
                     //crypto_price.push(response.data.ticker.price);
