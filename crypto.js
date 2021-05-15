@@ -164,10 +164,11 @@ app.get('/buy-sell', function (req, res) {
 
 app.post('/purchaseorder', function (req, res) {
 
-
-
-    res.redirect('buy-sell');
-
+    if (req.session.loggedin) {
+        res.redirect('buy-sell');
+    } else {
+        res.redirect('/')
+    }
 
 });
 
