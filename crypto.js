@@ -173,12 +173,20 @@ app.post('/purchase-order', function (req, res) {
 
         console.log(user_info)
 
+
         if (check_crypto(user_info, crypto_name_purchased)[0]) {
-            console.log("Exists")
+
+            for (i = 0; i < cred_info.length; i++) {
+                if (user_info[1].username == cred_info[i].username) {
+                    cred_info[i].amount = cred_info[i].amount + crypto_amount_purchased
+                }
+            }
+
         } else {
             console.log("Do not exists")
         }
 
+        console.log(cred_info)
         context.status_msg_purchase = "Purchase in the record!"
         res.render('buy-sell', context);
     } else {
