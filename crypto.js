@@ -150,7 +150,10 @@ app.get('/home', function (req, res) {
 
 
 
-app.get('/purchase', function (req, res) {
+app.post('/purchase', function (req, res) {
+    var crypto_name_purchased = req.body.crypto_name;
+    var crypto_amount_purchased = req.body.amount;
+    var crypto_cost_purchased = req.body.cost;
     res.render('purchase');
 });
 
