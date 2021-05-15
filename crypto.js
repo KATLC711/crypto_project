@@ -69,7 +69,7 @@ app.post('/create_acount', function (req, res) {
         res.render('home', context)
     } else {
         var context = []
-        context.status_msg = 'User ID exists.'
+        context.status_msg = 'User ID exists. Account creation failed.'
         res.render('home', context)
     }
 });
