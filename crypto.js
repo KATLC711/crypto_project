@@ -40,6 +40,7 @@ var nokkiu = {
 cred_info.push(cheungke)
 cred_info.push(nokkiu)
 
+var crypto_list = ['BTC', 'ETH', 'BNB', 'VET', 'LINK', 'ADA', 'XLM']
 
 
 app.get('/', function (req, res) {
@@ -105,9 +106,9 @@ app.get('/home', function (req, res) {
         var crypto_price = []
         var promises = []
 
-        for (i = 0; i < holdings.length; i++) {
+        for (i = 0; i < crypto_list.length; i++) {
             promises.push(
-                axios.get('https://api.cryptonator.com/api/full/' + holdings[i] + '-usd').then(response => {
+                axios.get('https://api.cryptonator.com/api/full/' + crypto_list[i] + '-usd').then(response => {
                     // do something with response
                     crypto_price.push(response.data.ticker.price)
                     //crypto_price.push(response.data.ticker.price);
@@ -118,7 +119,11 @@ app.get('/home', function (req, res) {
         Promise.all(promises).then(() => {
 
             for (i = 0; i < holdings.length; i++) {
-                cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price[i], 'value': amount[i] * crypto_price[i] })
+                for (j = 0; j < crypto_list.length; j++) {
+                    if (crypto_list[j] == holdings[i]) {
+                        cryprolist.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price[j], 'value': amount[i] * crypto_price[j] })
+                    }
+                }
             }
             context.cryprolist = cryprolist
             res.render('login', context);
