@@ -28,4 +28,4 @@ Promise.all(promises).then(() => {
 
     console.log(crypto_price)
 
-}
+});
