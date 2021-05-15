@@ -162,7 +162,7 @@ app.get('/buy-sell', function (req, res) {
 
 
 
-app.post('/purchaseorder', function (req, res) {
+app.post('/purchase-order', function (req, res) {
 
     if (req.session.loggedin) {
         var context = []
