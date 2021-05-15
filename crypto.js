@@ -174,7 +174,7 @@ app.post('/purchase-order', function (req, res) {
         console.log(user_info)
 
         for (i = 0; i < user_info[1].holdings.length; i++) {
-            print(user_info[1].holdings[i])
+            console.log(user_info[1].holdings[i])
         }
 
         context.status_msg_purchase = "Purchase in the record!"
