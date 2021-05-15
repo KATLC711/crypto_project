@@ -24,8 +24,7 @@ for (i = 0; i < crypto_list.length; i++) {
 
         axios.get('https://api.cryptonator.com/api/full/' + request_name + '-usd').then(response => {
 
-            crypto_price.push(response.data.ticker.price)
-            console.log(request_name)
+            resolve(crypto_price.push(response.data.ticker.price))
 
         })
     )
