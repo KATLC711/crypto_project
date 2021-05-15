@@ -64,9 +64,9 @@ app.post('/create_acount', function (req, res) {
         cred_info.push(new_user)
         console.log(cred_info)
 
-        res.render('/home')
+        res.render('home')
     } else {
-        res.render('/home')
+        res.render('home')
     }
 });
 
