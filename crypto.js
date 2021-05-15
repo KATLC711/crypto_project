@@ -167,7 +167,7 @@ app.post('/purchaseorder', function (req, res) {
     if (req.session.loggedin) {
         var context = []
         context.status_msg_purchase = "Purchase in the record!"
-        res.redirect('buy-sell');
+        res.redirect('buy-sell', context);
     } else {
         res.redirect('/')
     }
