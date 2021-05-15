@@ -9,6 +9,7 @@
     <div class="purchase-form">
         <h1>Purchase Form</h1>
         <form action="/purhcase" method="POST">
+            <legend>Cryptocurrency:</legend>
             <input list="crypto_name" name="crypto_name">
             <datalist id="crypto_name">
                 <option value="BTC">
@@ -19,6 +20,11 @@
                 <option value="ADA">
                 <option value="XLM">
             </datalist>
+            </input>
+            <legend>Amount:</legend>
+            <input type="number" id="amount" name="amount">
+            <legend>Unit Cost:</legend>
+            <input type="number" id="cost" name="cost">
             <input type="submit">
         </form>
     </div>
