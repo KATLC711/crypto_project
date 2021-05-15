@@ -162,7 +162,7 @@ app.get('/buy-sell', function (req, res) {
 
 
 
-app.get('/buy-sell', function (req, res) {
+app.post('/purchaseorder', function (req, res) {
     if (req.session.loggedin) {
 
         var crypto_name_purchased = req.body.crypto_name;
