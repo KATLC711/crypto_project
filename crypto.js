@@ -194,7 +194,7 @@ function check_crypto(user_info, crypto_name) {
             return [true, i]
         }
     }
-    return [false, nan]
+    return [false, -1]
 }
 
 
