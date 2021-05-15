@@ -48,7 +48,7 @@ app.get('/', function (req, res) {
 
 
 app.get('/register', function (req, res) {
-    res.render('home');
+    res.render('register');
 });
 
 
