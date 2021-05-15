@@ -17,7 +17,7 @@ var promises = []
 
 for (i = 0; i < crypto_list.length; i++) {
 
-    let request_name = crypto_list[i]
+    var request_name = crypto_list[i]
 
     promises.push(
 
