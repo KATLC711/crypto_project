@@ -19,15 +19,7 @@ for (i = 0; i < crypto_list.length; i++) {
 
     let request_name = crypto_list[i]
 
-
-    promises.push(
-
-        axios.get('https://api.cryptonator.com/api/full/' + request_name + '-usd').then(response => {
-
-            resolve(crypto_price.push(response.data.ticker.price))
-
-        })
-    )
+    promises.push(axios.get('https://api.cryptonator.com/api/full/' + request_name + '-usd'))
 }
 
 Promise.all(promises).then(() => console.log(crypto_price));
