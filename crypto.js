@@ -135,7 +135,7 @@ app.get('/home', function (req, res) {
 
 
 
-            context.all_crypto = all_crypto
+            //context.all_crypto = all_crypto
             context.cryptoholdings = cryptoholdings
             res.render('login', context);
         }

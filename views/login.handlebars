@@ -23,6 +23,26 @@
 
 
 
+<h3>Crypto Prices</h3>
+<table border="border: 1px solid #333">
+    <thead>
+        <tr>
+            <th>Crypto</th>
+            <th>price</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each all_crypto}}
+        <tr>
+            <td>{{this.crypto_name}}</td>
+            <td>{{this.crypto_price}}</td>
+
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
 
 
 
