@@ -171,7 +171,7 @@ app.post('/purchase-order', function (req, res) {
         var crypto_amount_purchased = req.body.amount;
         var crypto_cost_purchased = req.body.cost;
 
-
+        console.log(username)
         context.status_msg_purchase = "Purchase in the record!"
         res.render('buy-sell', context);
     } else {
@@ -183,34 +183,6 @@ app.post('/purchase-order', function (req, res) {
 
 
 
-/*
-if (req.session.loggedin) {
-
-    var crypto_name_purchased = req.body.crypto_name;
-    var crypto_amount_purchased = req.body.amount;
-    var crypto_cost_purchased = req.body.cost;
-
-    var context = []
-    context.status_msg_purchase = "Purchase in the record!"
-
-        if (req.session.loggedin) {
-
-        var crypto_name_purchased = req.body.crypto_name;
-        var crypto_amount_purchased = req.body.amount;
-        var crypto_cost_purchased = req.body.cost;
-
-        var context = []
-        context.status_msg_purchase = "Purchase in the record!"
-
-        res.render('buy-sell', context);
-    } else {
-        res.redirect('/')
-    }
-} else {
-    res.redirect('/')
-}
-
-*/
 
 
 
