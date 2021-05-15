@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+<style>
+    .purchase-form {
+        border: 5px outset #2a6592;
+        height: 300px;
+    }
+
+    .sell-form {
+        border: 5px outset #2a6592;
+        height: 300px;
+    }
+</style>
 
 <body>
 
@@ -25,10 +36,13 @@
             <input type="number" id="amount" name="amount">
             <legend>Unit Cost:</legend>
             <input type="number" id="cost" name="cost">
+            <br>
             <input type="submit">
         </form>
     </div>
 
+
+    {{{status_msg}}}
 
 
 </body>
