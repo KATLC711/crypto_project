@@ -263,6 +263,7 @@ app.post('/sell-order', function (req, res) {
             if (user_info[1].amount[i] == 0) {
                 user_info[1].amount.splice(i, 1)
                 user_info[1].holdings.splice(i, 1)
+                user_info[1].cost.splice(i, 1)
             }
 
             var profit_sold = crypto_amount_sold * (crypto_price_sold - user_info[1].cost[i]).toFixed(5);
