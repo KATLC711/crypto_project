@@ -46,11 +46,11 @@
             <div class="sell-form">
 
                 <form action="sell-order" method="POST">
-                    <legend>Your Current Holdings:</legend>
+                    <legend>Your Current Holdings (Amount):</legend>
 
                     {{#each holding_amount_list}}
                     <input type="radio" id={{this.holding}} name="crypto_name" value={{this.holding}}>
-                    <label for={{this.holding}}>{{this.holding}}</label><br>
+                    <label for={{this.holding}}>{{this.holding}}({{this.amount}})</label><br>
                     {{/each}}
 
                     <legend>Amount:</legend>
