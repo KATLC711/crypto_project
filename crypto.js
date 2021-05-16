@@ -216,7 +216,7 @@ app.post('/purchase-order', function (req, res) {
 
                             cred_info[i].cost[j] = (parseFloat(cred_info[i].cost[j]) * parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased) * parseFloat(crypto_cost_purchased)) / (parseFloat(crypto_amount_purchased) + parseFloat(cred_info[i].amount[j]))
                             cred_info[i].amount[j] = parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased)
-                            cred_into[i].history.push(['Buy', crypto_name_purchased, crypto_amount_purchased, crypto_cost_purchased, crypto_date_purchased])
+                            cred_info[i].history.push(['Buy', crypto_name_purchased, crypto_amount_purchased, crypto_cost_purchased, crypto_date_purchased])
                         }
 
                     }
