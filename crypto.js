@@ -184,9 +184,9 @@ app.post('/purchase-order', function (req, res) {
                 if (user_info[1].username == cred_info[i].username) {
                     for (j = 0; j < cred_info[i].holdings.length; j++) {
                         if (cred_info[i].holdings[j] == crypto_name_purchased) {
-                            console.log(typeof (cred_info[i].amount[j]))
+
                             cred_info[i].amount[j] = parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased)
-                            console.log(typeof (cred_info[i].amount[j]))
+                            cred_info[i].cost[j] = (parseFloat(cred_info[i].cost[j]) * parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased) * parseFloat(crypto_cost_purchased)) / parseFloat(cred_info[i].amount[j])
                         }
 
                     }
@@ -198,6 +198,7 @@ app.post('/purchase-order', function (req, res) {
                 if (user_info[1].username == cred_info[i].username) {
                     user_info[1].holdings.push(crypto_name_purchased)
                     user_info[1].amount.push(parseFloat(crypto_amount_purchased))
+                    user_info[1].cost.push(parseFloat(crypto_cost_purchased))
                 }
             }
         }
