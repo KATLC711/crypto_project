@@ -10,23 +10,27 @@
 </p>
 
 <p>
-    In my free time, I enjoy cycling, watching TV shows, and spending time with my dog, Petey.
-    <img src="/photo/petey_1.jpg" width="500" height="600">
+    In my free time, I enjoy cycling, watching TV shows, and spending time with my dog, Petey
+
 </p>
 
+<br>
 
 
 
 
 
 
+<div class="slideshow">
+    <img class="PeteySlides" src="/photo/petey_1.jpg" style="width:100%">
+    <img class="PeteySlides" src="/photo/petey_2.jpg" style="width:100%">
+    <img class="PeteySlides" src="/photo/petey_3.jpg" style="width:100%">
+    <img class="PeteySlides" src="/photo/petey_4.jpg" style="width:100%">
+    <img class="PeteySlides" src="/photo/petey_5.jpg" style="width:100%">
 
-
-
-
-
-
-
+    <button class="slideshow" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="slideshow" onclick="plusDivs(1)">&#10095;</button>
+</div>
 
 
 
@@ -58,3 +62,26 @@
 
 
 <a href="/home">Click here to home</a>
+
+
+
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
