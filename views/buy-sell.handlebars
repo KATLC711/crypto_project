@@ -53,8 +53,8 @@
 
 
                     {{#each holding_amount_list}}
-                    <input type="radio" id={{#this.holding}} name="crypto_name" value={{#this.holding}}>
-                    <label for={{#this.holding}}>{{#this.holding}}</label><br>
+                    <input type="radio" id={{this.holding}} name="crypto_name" value={{this.holding}}>
+                    <label for={{this.holding}}>{{this.holding}}</label><br>
                     {{/each}}
 
                     <legend>Amount:</legend>
