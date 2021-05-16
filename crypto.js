@@ -28,13 +28,15 @@ var cheungke = {
     'username': 'cheungke',
     'password': 'abc1234',
     'holdings': ['VET', 'ETH'],
-    'amount': [5.00, 10.00]
+    'amount': [5.00, 10.00],
+    'cost': [0.185, 2331.50]
 }
 var nokkiu = {
     'username': 'nokkiu',
     'password': '123456',
     'holdings': ['BTC', 'ETH'],
-    'amount': [100.00, 10.00]
+    'amount': [100.00, 10.00],
+    'cost': [36013.65, 1835.60]
 }
 
 cred_info.push(cheungke)
@@ -63,6 +65,7 @@ app.post('/create_acount', function (req, res) {
         new_user.password = password
         new_user.holdings = []
         new_user.amount = []
+        new_user.cost = []
         cred_info.push(new_user)
         console.log(cred_info)
         var context = []
@@ -103,6 +106,7 @@ app.get('/home', function (req, res) {
         var context = []
         var holdings = user_info[1].holdings
         var amount = user_info[1].amount
+        var cost = user_info[1].cost
         var cryptoholdings = []
         var crypto_price = []
         var crypto_name = []
@@ -131,7 +135,7 @@ app.get('/home', function (req, res) {
             for (i = 0; i < holdings.length; i++) {
                 for (j = 0; j < crypto_list.length; j++) {
                     if (crypto_list[j] == holdings[i]) {
-                        cryptoholdings.push({ 'holdings': holdings[i], 'amount': amount[i], 'price': crypto_price[j], 'value': amount[i] * crypto_price[j] })
+                        cryptoholdings.push({ 'holdings': holdings[i], 'amount': amount[i], 'cost': cost[i], 'price': crypto_price[j], 'value': amount[i] * crypto_price[j], 'profit': amount[i] * (crypto_price[j] - cost[i]) })
                     }
                 }
             }
