@@ -234,7 +234,7 @@ app.post('/purchase-order', function (req, res) {
             }
         }
 
-        console.log(cred_info.history)
+        console.log(user_info[1].history)
 
         var holding_amount_list = []
 
