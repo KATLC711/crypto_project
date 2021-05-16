@@ -203,6 +203,7 @@ app.post('/purchase-order', function (req, res) {
         var crypto_name_purchased = req.body.crypto_name;
         var crypto_amount_purchased = req.body.amount;
         var crypto_cost_purchased = req.body.cost;
+        var crypto_date_purchased = req.body.date;
 
 
 
@@ -215,6 +216,7 @@ app.post('/purchase-order', function (req, res) {
 
                             cred_info[i].cost[j] = (parseFloat(cred_info[i].cost[j]) * parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased) * parseFloat(crypto_cost_purchased)) / (parseFloat(crypto_amount_purchased) + parseFloat(cred_info[i].amount[j]))
                             cred_info[i].amount[j] = parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased)
+                            cred_into[i].history.push(['Buy', crypto_name_purchased, crypto_amount_purchased, crypto_cost_purchased, crypto_date_purchased])
                         }
 
                     }
@@ -227,6 +229,7 @@ app.post('/purchase-order', function (req, res) {
                     user_info[1].holdings.push(crypto_name_purchased)
                     user_info[1].amount.push(parseFloat(crypto_amount_purchased))
                     user_info[1].cost.push(parseFloat(crypto_cost_purchased))
+                    user_info[1].history.push(['Buy', crypto_name_purchased, crypto_amount_purchased, crypto_cost_purchased, crypto_date_purchased])
                 }
             }
         }
@@ -267,6 +270,7 @@ app.post('/sell-order', function (req, res) {
         var crypto_name_sold = req.body.crypto_name;
         var crypto_amount_sold = req.body.amount;
         var crypto_price_sold = req.body.price;
+        var crypto_date_sold = req.body.date;
 
         for (i = 0; i < user_info[1].holdings.length; i++) {
             if (user_info[1].holdings[i] == crypto_name_sold) {
@@ -287,6 +291,7 @@ app.post('/sell-order', function (req, res) {
                 user_info[1].amount.splice(i, 1)
                 user_info[1].holdings.splice(i, 1)
                 user_info[1].cost.splice(i, 1)
+                user_info[1].history.push(['Buy', crypto_name_sold, crypto_amount_sold, crypto_cost_sold, crypto_date_sold])
             }
 
 
@@ -296,6 +301,11 @@ app.post('/sell-order', function (req, res) {
                 holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
             }
 
+            if (profit_sold > 0) {
+                context.status_msg_sell = "Sold Successful! You earned $" + profit_sold
+            } else {
+                context.status_msg_sell = "Sold Successful! You lost $" + Math.abs(profit_sold)
+            }
             context.status_msg_sell = "Sold Successful! You earned $" + profit_sold
             context.holding_amount_list = holding_amount_list
             res.render('buy-sell', context);
