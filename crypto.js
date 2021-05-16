@@ -260,9 +260,8 @@ app.post('/sell-order', function (req, res) {
             user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
 
             if (user_info[1].amount[i] == 0) {
-                const index = user_info[1].amount.indexOf(user_info[1].amount.length);
-                user_info[1].amount.splice(index, i)
-                user_info[1].holdings.splice(index, i)
+                user_info[1].amount.splice(i, 1)
+                user_info[1].holdings.splice(i, 1)
             }
 
 
