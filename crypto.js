@@ -260,13 +260,15 @@ app.post('/sell-order', function (req, res) {
         } else {
             user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
 
+            var profit_sold = crypto_amount_sold * (crypto_price_sold - user_info[1].cost[i]).toFixed(5);
+
             if (user_info[1].amount[i] == 0) {
                 user_info[1].amount.splice(i, 1)
                 user_info[1].holdings.splice(i, 1)
                 user_info[1].cost.splice(i, 1)
             }
 
-            var profit_sold = crypto_amount_sold * (crypto_price_sold - user_info[1].cost[i]).toFixed(5);
+
             var holding_amount_list = []
 
             for (i = 0; i < user_info[1].holdings.length; i++) {
