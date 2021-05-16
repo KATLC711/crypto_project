@@ -48,16 +48,20 @@
                 <form action="sell-order" method="POST">
                     <legend>Cryptocurrency:</legend>
                     <input list="crypto_name" name="crypto_name">
-                    <datalist id="crypto_name">
-                        {{#each holding_amount_list}}
-                        <option value={{this.holding}}></option>
-                        {{/each}}
-                    </datalist>
-                    </input>
+
+
+
+
+                    {{#each holding_amount_list}}
+                    <input type="radio" id={{#this.holding}} name="crypto_name" value={{#this.holding}}>
+                    <label for={{#this.holding}}>{{#this.holding}}</label><br>
+                    {{/each}}
+
                     <legend>Amount:</legend>
                     <input type="number" id="amount" name="amount">
-                    <legend>Unit Cost:</legend>
-                    <input type="number" id="cost" name="cost">
+
+
+
                     <br>
                     <input type="submit">
                 </form>
