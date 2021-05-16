@@ -46,11 +46,7 @@
             <div class="sell-form">
 
                 <form action="sell-order" method="POST">
-                    <legend>Cryptocurrency:</legend>
-                    <input list="crypto_name" name="crypto_name">
-
-
-
+                    <legend>Your Current Holdings:</legend>
 
                     {{#each holding_amount_list}}
                     <input type="radio" id={{this.holding}} name="crypto_name" value={{this.holding}}>

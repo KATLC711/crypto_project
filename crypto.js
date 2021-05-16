@@ -165,7 +165,6 @@ app.get('/buy-sell', function (req, res) {
         }
 
         context.holding_amount_list = holding_amount_list
-
         res.render('buy-sell', context);
     } else {
         res.redirect('/')
@@ -218,8 +217,8 @@ app.post('/purchase-order', function (req, res) {
         for (i = 0; i < user_info[1].holdings.length; i++) {
             holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
         }
-        console.log(holding_amount_list)
-        //context.holding_amount_list = holding_amount_list
+
+        context.holding_amount_list = holding_amount_list
         context.status_msg_purchase = "Purchase in the record!"
         res.render('buy-sell', context);
 
