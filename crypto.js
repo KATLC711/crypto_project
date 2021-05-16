@@ -55,6 +55,10 @@ app.get('/register', function (req, res) {
     res.render('register');
 });
 
+app.get('/about-us', function (req, res) {
+    res.render('aboutus');
+});
+
 
 app.post('/create_acount', function (req, res) {
     var username = req.body.username;
