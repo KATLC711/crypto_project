@@ -234,7 +234,7 @@ app.post('/purchase-order', function (req, res) {
             }
         }
 
-        console.log(user_info[1].history)
+        //console.log(user_info[1].history)
 
         var holding_amount_list = []
 
@@ -324,6 +324,24 @@ app.post('/sell-order', function (req, res) {
 
 
 
+app.get('/transaction-history', function (req, res) {
+
+    if (req.session.loggedin) {
+        var context = []
+        var transaction_history = []
+
+        for (i = 0; i < user_info[1].history.length; i++) {
+            transaction_history.push({ 'date': user_info[1].date[i], 'holding': user_info[1].holding[i], 'amount': user_info[1].amount[i], 'price': user_info[1].price[i] })
+        }
+
+        context.transaction_history = transaction_history
+        console.log(transaction_history)
+        res.render('transaction-history', context)
+    } else {
+        res.redirect('/')
+    }
+
+});
 
 
 
