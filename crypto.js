@@ -132,7 +132,6 @@ app.get('/home', function (req, res) {
                 all_crypto.push({ 'crypto_name': crypto_name[i], 'crypto_price': crypto_price[i] })
             }
 
-            console.log(all_crypto.length)
             for (i = 0; i < holdings.length; i++) {
                 for (j = 0; j < all_crypto.length; j++) {
                     if (all_crypto[j].crypto_name == holdings[i]) {
@@ -185,8 +184,8 @@ app.post('/purchase-order', function (req, res) {
                     for (j = 0; j < cred_info[i].holdings.length; j++) {
                         if (cred_info[i].holdings[j] == crypto_name_purchased) {
 
+                            cred_info[i].cost[j] = (parseFloat(cred_info[i].cost[j]) * parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased) * parseFloat(crypto_cost_purchased)) / (parseFloat(crypto_amount_purchased) + parseFloat(cred_info[i].amount[j]))
                             cred_info[i].amount[j] = parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased)
-                            cred_info[i].cost[j] = (parseFloat(cred_info[i].cost[j]) * parseFloat(cred_info[i].amount[j]) + parseFloat(crypto_amount_purchased) * parseFloat(crypto_cost_purchased)) / parseFloat(cred_info[i].amount[j])
                         }
 
                     }
