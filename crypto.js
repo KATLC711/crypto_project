@@ -32,14 +32,22 @@ var cheungke = {
     'password': 'abc1234',
     'holdings': ['VET', 'ETH'],
     'amount': [5.00, 10.00],
-    'cost': [0.185, 2331.50]
+    'cost': [0.185, 2331.50],
+    'history': [
+        ['Buy', 'VET', 5.00, 0.185, '2020-01-01'],
+        ['Buy', 'ETH', 10.00, 2331.50, '2020-03-01']
+    ]
 }
 var nokkiu = {
     'username': 'nokkiu',
     'password': '123456',
     'holdings': ['BTC', 'ETH'],
     'amount': [100.00, 10.00],
-    'cost': [36013.65, 1835.60]
+    'cost': [36013.65, 1835.60],
+    'history': [
+        ['Buy', 'VET', 100, 36013.65, '2020-01-16'],
+        ['Buy', 'VET', 10, 1835.60, '2020-04-03']
+    ]
 }
 
 cred_info.push(cheungke)
@@ -59,7 +67,13 @@ app.get('/register', function (req, res) {
 });
 
 app.get('/about-us', function (req, res) {
-    res.render('aboutus');
+
+    if (req.session.loggedin) {
+        res.render('aboutus');
+    } else {
+        res.redirect('/')
+    }
+
 });
 
 
