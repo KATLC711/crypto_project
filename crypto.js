@@ -245,6 +245,7 @@ app.post('/sell-order', function (req, res) {
 
         var crypto_name_sold = req.body.crypto_name;
         var crypto_amount_sold = req.body.amount;
+        var crypto_price_sold = req.body.price;
 
         for (i = 0; i < user_info[1].holdings.length; i++) {
             if (user_info[1].holdings[i] == crypto_name_sold) {
@@ -264,7 +265,7 @@ app.post('/sell-order', function (req, res) {
                 user_info[1].holdings.splice(i, 1)
             }
 
-            var profit_sold = crypto_amount_sold * (user_info[1].amount[i] - user_info[1].cost[i])
+            var profit_sold = crypto_amount_sold * (crypto_price_sold - user_info[1].cost[i])
             var holding_amount_list = []
 
             for (i = 0; i < user_info[1].holdings.length; i++) {
