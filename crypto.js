@@ -254,7 +254,7 @@ app.post('/sell-order', function (req, res) {
         }
 
         if (crypto_amount_sold > crypto_on_hand) {
-            context.status_msg = "Exceeds volumne on hand"
+            context.status_msg_sell = "Exceeds volumne on hand"
             res.render('buy-sell', context);
         } else {
             user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
@@ -271,7 +271,7 @@ app.post('/sell-order', function (req, res) {
                 holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
             }
 
-            context.status_msg = "Sold Successful!"
+            context.status_msg_sell = "Sold Successful!"
             context.holding_amount_list = holding_amount_list
             res.render('buy-sell', context);
         }
