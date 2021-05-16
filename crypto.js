@@ -133,9 +133,9 @@ app.get('/home', function (req, res) {
             }
 
             for (i = 0; i < holdings.length; i++) {
-                for (j = 0; j < crypto_list.length; j++) {
-                    if (crypto_list[j] == holdings[i]) {
-                        cryptoholdings.push({ 'holdings': holdings[i], 'amount': amount[i], 'cost': cost[i], 'price': crypto_price[j], 'value': amount[i] * crypto_price[j], 'profit': amount[i] * (crypto_price[j] - cost[i]) })
+                for (j = 0; j < all_crypto.crypto_name.length; j++) {
+                    if (all_crypto.crypto_name[j] == holdings[i]) {
+                        cryptoholdings.push({ 'holdings': holdings[i], 'amount': amount[i], 'cost': cost[i], 'price': all_crypto.crypto_price[j], 'value': amount[i] * all_crypto.crypto_price[j], 'profit': amount[i] * (all_crypto.crypto_price[j] - cost[i]) })
                     }
                 }
             }
