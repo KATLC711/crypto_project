@@ -291,7 +291,7 @@ app.post('/sell-order', function (req, res) {
                 user_info[1].amount.splice(i, 1)
                 user_info[1].holdings.splice(i, 1)
                 user_info[1].cost.splice(i, 1)
-                user_info[1].history.push(['Buy', crypto_name_sold, crypto_amount_sold, crypto_cost_sold, crypto_date_sold])
+                user_info[1].history.push(['Buy', crypto_name_sold, crypto_amount_sold, crypto_price_sold, crypto_date_sold])
             }
 
 
