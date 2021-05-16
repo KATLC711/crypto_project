@@ -45,17 +45,13 @@
         <h2>Sell Order</h1>
             <div class="sell-form">
 
-                <form action="purchase-order" method="POST">
+                <form action="sell-order" method="POST">
                     <legend>Cryptocurrency:</legend>
                     <input list="crypto_name" name="crypto_name">
                     <datalist id="crypto_name">
-                        <option value="BTC">
-                        <option value="ETH">
-                        <option value="BNB">
-                        <option value="VET">
-                        <option value="LINK">
-                        <option value="ADA">
-                        <option value="XLM">
+                        {{#each holding_amount_list}}
+                        <option value={{this.holding}}></option>
+                        {{/each}}
                     </datalist>
                     </input>
                     <legend>Amount:</legend>
