@@ -329,11 +329,12 @@ app.get('/transaction-history', function (req, res) {
     if (req.session.loggedin) {
         var context = []
         var transaction_history = []
-
+        console.log(user_info[1].history)
+        /*
         for (i = 0; i < user_info[1].history.length; i++) {
             transaction_history.push({ 'date': user_info[1].date[i], 'holding': user_info[1].holding[i], 'amount': user_info[1].amount[i], 'price': user_info[1].price[i] })
         }
-
+*/
         context.transaction_history = transaction_history
         console.log(transaction_history)
         res.render('transaction-history', context)
