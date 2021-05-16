@@ -258,7 +258,22 @@ app.post('/sell-order', function (req, res) {
             res.render('buy-sell', context);
         } else {
             user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
-            res.redirect('buy-sell');
+
+            if (user_info[1].amount[i] == 0) {
+                user_info[1].amount.splice(index, i)
+                user_info[1].holdings.splice(index, i)
+            }
+
+
+            var holding_amount_list = []
+
+            for (i = 0; i < user_info[1].holdings.length; i++) {
+                holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
+            }
+
+            context.status_msg = "Sold Successful!"
+            context.holding_amount_list = holding_amount_list
+            res.render('buy-sell', context);
         }
 
 
