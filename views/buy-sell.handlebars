@@ -54,14 +54,14 @@
                     {{/each}}
 
                     <legend>Amount:</legend>
-                    <input type="number" id="amount" name="amount">
-
-
-
+                    <input type="number" id="amount" name="amount" step="0.000001" min=0>
+                    <legend>Unit Cost:</legend>
+                    <input type="number" id="cost" name="cost" step="0.000001" min=0>
                     <br>
+
                     <input type="submit">
                 </form>
-                {{{status_msg_purchase}}}
+                {{{status_msg_sell}}}
             </div>
 
 

@@ -232,6 +232,64 @@ app.post('/purchase-order', function (req, res) {
 });
 
 
+
+
+
+
+
+
+app.post('/sell-order', function (req, res) {
+
+    if (req.session.loggedin) {
+        var context = []
+
+        var crypto_name_sold = req.body.crypto_name;
+        var crypto_amount_sold = req.body.amount;
+
+        for (i = 0; i < user_info[1].holdings.length; i++) {
+            if (user_info[1].holdings[i] == crypto_name_sold) {
+                var crypto_on_hand = user_info[1].amount[i]
+                break;
+            }
+        }
+
+        if (crypto_amount_sold > crypto_on_hand) {
+            context.status_msg = "Exceeds volumne on hand"
+            res.render('buy-sell', context);
+        } else {
+            user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
+            res.redirect('buy-sell');
+        }
+
+
+    } else {
+        res.redirect('/')
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function check_crypto(user_info, crypto_name) {
     for (i = 0; i < user_info[1].holdings.length; i++) {
         if (user_info[1].holdings[i] == crypto_name) {
