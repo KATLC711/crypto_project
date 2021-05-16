@@ -14,7 +14,7 @@
 
 
 
-    <h2>Purchase Form</h1>
+    <h2>Purchase Order</h1>
         <div class="purchase-form">
 
             <form action="purchase-order" method="POST">
@@ -42,8 +42,36 @@
 
 
 
+        <h2>Sell Order</h1>
+            <div class="sell-form">
 
-        <a href="/home">Click here to home</a>
+                <form action="purchase-order" method="POST">
+                    <legend>Cryptocurrency:</legend>
+                    <input list="crypto_name" name="crypto_name">
+                    <datalist id="crypto_name">
+                        <option value="BTC">
+                        <option value="ETH">
+                        <option value="BNB">
+                        <option value="VET">
+                        <option value="LINK">
+                        <option value="ADA">
+                        <option value="XLM">
+                    </datalist>
+                    </input>
+                    <legend>Amount:</legend>
+                    <input type="number" id="amount" name="amount">
+                    <legend>Unit Cost:</legend>
+                    <input type="number" id="cost" name="cost">
+                    <br>
+                    <input type="submit">
+                </form>
+                {{{status_msg_purchase}}}
+            </div>
+
+
+
+            <br>
+            <a href="/home">Click here to home</a>
 </body>
 
 </html>
