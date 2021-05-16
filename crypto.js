@@ -264,14 +264,14 @@ app.post('/sell-order', function (req, res) {
                 user_info[1].holdings.splice(i, 1)
             }
 
-            var profit_sold = (crypto_amount_sold * user_info[1].cost[i]) * user_info[1].amount[i]
+            var profit_sold = crypto_amount_sold * (user_info[1].amount[i] - user_info[1].cost[i])
             var holding_amount_list = []
 
             for (i = 0; i < user_info[1].holdings.length; i++) {
                 holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
             }
 
-            context.status_msg_sell = "Sold Successful! You eart $" + profit_sold
+            context.status_msg_sell = "Sold Successful! You earned $" + profit_sold
             context.holding_amount_list = holding_amount_list
             res.render('buy-sell', context);
         }
