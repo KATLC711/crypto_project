@@ -79,6 +79,11 @@
     var slideIndex = 1;
     showDivs(slideIndex);
 
+    var refresh = window.setInterval(function () {
+        plusDivs(1)
+    }, 2000);
+
+
     function plusDivs(n) {
         showDivs(slideIndex += n);
     }
