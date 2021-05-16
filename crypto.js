@@ -10,6 +10,9 @@ const axios = require('axios');
 const fs = require('fs').promises;
 
 var session = require('express-session');
+
+
+app.use(express.static('public'));
 app.use(session({
     secret: 'secret',
     resave: true,
