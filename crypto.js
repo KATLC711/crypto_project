@@ -30,12 +30,13 @@ var cred_info = []
 var cheungke = {
     'username': 'cheungke',
     'password': 'abc1234',
-    'holdings': ['VET', 'ETH'],
-    'amount': [5.00, 10.00],
-    'cost': [0.185, 2331.50],
+    'holdings': ['VET', 'ETH', 'BNB'],
+    'amount': [5.00, 10.00, 200.00],
+    'cost': [0.185, 2331.50, 650.50],
     'history': [
         ['Buy', 'VET', 5.00, 0.185, '2020-01-01'],
-        ['Buy', 'ETH', 10.00, 2331.50, '2020-03-01']
+        ['Buy', 'ETH', 10.00, 2331.50, '2020-03-01'],
+        ['Buy', 'BNB', 200.00, 650.50, '2018-12-01']
     ]
 }
 var nokkiu = {
@@ -334,7 +335,7 @@ app.get('/transaction-history', function (req, res) {
         for (i = 0; i < user_info[1].history.length; i++) {
             transaction_history.push({ 'date': user_info[1].history[i][4], 'order-type': user_info[1].history[i][0], 'holding': user_info[1].history[i][1], 'amount': user_info[1].history[i][2], 'price': user_info[1].history[i][3] })
         }
-
+        sort_history(transaction_history);
         context.transaction_history = transaction_history
         console.log(transaction_history)
         res.render('transaction-history', context)
@@ -350,7 +351,17 @@ app.get('/transaction-history', function (req, res) {
 
 
 
-
+function sort_history(transaction_history) {
+    for (var i = 0; i < transaction_history.length; i++) {
+        for (var j = 0; j < (transaction_history.length - i - 1); j++) {
+            if (transaction_history[j].date > transaction_history[j + 1].date]) {
+                var temp = transaction_history[j]
+                transaction_history[j] = transaction_history[j + 1]
+                transaction_history[j + 1] = temp
+            }
+        }
+    }
+}
 
 
 
