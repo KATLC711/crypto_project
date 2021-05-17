@@ -162,7 +162,7 @@ app.get('/home', function (req, res) {
                 }
             }
 
-            //sort_crypto_by_name(all_crypto);
+            sort_crypto_by_name(all_crypto);
             context.all_crypto = all_crypto
             context.cryptoholdings = cryptoholdings
             res.render('login', context);
@@ -351,8 +351,8 @@ app.get('/transaction-history', function (req, res) {
 
 
 function sort_crypto_by_name(crypto_object) {
-    for (var i = 0; i < all_crypto.length; i++) {
-        for (var j = 0; j < (all_crypto.length - i - 1); j++) {
+    for (var i = 0; i < crypto_object.length; i++) {
+        for (var j = 0; j < (crypto_object.length - i - 1); j++) {
             if (crypto_object[j].crypto_name > crypto_object[j + 1].crypto_name) {
                 var temp = crypto_object[j]
                 crypto_object[j] = crypto_object[j + 1]
