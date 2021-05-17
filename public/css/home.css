@@ -1,7 +1,8 @@
 body {
     background:#151b29;
     font-family: 'Roboto', sans-serif;
-    transition: width 2s, height 2s;
+    transition-duration: 2s;
+    transition-delay: 1s;
 
 }
 
