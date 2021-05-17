@@ -1,8 +1,11 @@
 body {
     background:#151b29;
     font-family: 'Roboto', sans-serif;
-    transition: visibility 2s, opacity 2s linear;
 
+}
+
+.container {
+    transition: all 0.25s;
 }
 
 .login-box {
