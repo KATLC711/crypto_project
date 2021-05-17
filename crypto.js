@@ -337,7 +337,7 @@ app.get('/transaction-history', function (req, res) {
         }
         sort_history(transaction_history);
         context.transaction_history = transaction_history
-        console.log(transaction_history)
+        //console.log(transaction_history)
         res.render('transaction-history', context)
     } else {
         res.redirect('/')
