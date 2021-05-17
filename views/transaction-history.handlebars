@@ -47,15 +47,17 @@
 
 
 <script>
-    var data = [
-        ['Foo', 'programmer'],
-        ['Bar', 'bus driver'],
-        ['Moo', 'Reindeer Hunter']
-    ];
 
-    console.log("Hello")
 
     function download_csv() {
+
+        var data = [
+            ['Foo', 'programmer'],
+            ['Bar', 'bus driver'],
+            ['Moo', 'Reindeer Hunter']
+        ];
+
+
         var csv = 'Name,Title\n';
         data.forEach(function (row) {
             csv += row.join(',');
