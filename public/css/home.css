@@ -1,7 +1,8 @@
 body {
     background:#151b29;
     font-family: 'Roboto', sans-serif;
-   
+    transition: width 2s, height 2s;
+
 }
 
 .login-box {
@@ -13,9 +14,7 @@ body {
     text-align: center;
     background:#ffffff;
     opacity : 0.8;
-    border-radius: 15px;
-    transition: width 2s, height 2s;
-    
+    border-radius: 15px;    
 }
 
 
