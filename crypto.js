@@ -157,7 +157,7 @@ app.get('/home', function (req, res) {
             for (i = 0; i < holdings.length; i++) {
                 for (j = 0; j < all_crypto.length; j++) {
                     if (all_crypto[j].crypto_name == holdings[i]) {
-                        cryptoholdings.push({ 'crypto_name': holdings[i], 'crypto_amount': amount[i], 'crypto_cost': cost[i], 'crypto_price': all_crypto[j].crypto_price, 'crypto_value': amount[i] * all_crypto[j].crypto_price, 'crypto_profit': amount[i] * (all_crypto[j].crypto_price - cost[i]) })
+                        cryptoholdings.push({ 'crypto_name': holdings[i], 'crypto_amount': amount[i].toFixed(2), 'crypto_cost': cost[i].toFixed(5), 'crypto_price': all_crypto[j].crypto_price.toFixed(5), 'crypto_value': (amount[i] * all_crypto[j].crypto_price).toFixed(5), 'crypto_profit': (amount[i] * (all_crypto[j].crypto_price - cost[i])).toFixed(5) })
                     }
                 }
             }
@@ -289,7 +289,7 @@ app.post('/sell-order', function (req, res) {
         } else {
             user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
 
-            var profit_sold = crypto_amount_sold * (crypto_price_sold - user_info[1].cost[i]).toFixed(5);
+            var profit_sold = (crypto_amount_sold * (crypto_price_sold - user_info[1].cost[i])).toFixed(5);
 
             if (user_info[1].amount[i] == 0) {
                 user_info[1].amount.splice(i, 1)
