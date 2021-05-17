@@ -1,7 +1,7 @@
 body {
     background:#151b29;
     font-family: 'Roboto', sans-serif;
-    transition-delay: 1s;
+    transition: all 0.25s;
 
 }
 
@@ -15,7 +15,6 @@ body {
     background:#ffffff;
     opacity : 0.8;
     border-radius: 15px;    
-    transition-delay: 1s;
 }
 
 
