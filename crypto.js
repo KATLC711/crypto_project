@@ -151,7 +151,7 @@ app.get('/home', function (req, res) {
             var all_crypto = []
 
             for (i = 0; i < crypto_name.length; i++) {
-                all_crypto.push({ 'crypto_name': crypto_name[i], 'crypto_price': crypto_price[i] })
+                all_crypto.push({ 'crypto_name': parseFloat(crypto_name[i]).toFixed(5), 'crypto_price': parseFloat(crypto_price[i]).toFixed(5) })
             }
 
             for (i = 0; i < holdings.length; i++) {
