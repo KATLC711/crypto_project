@@ -151,23 +151,24 @@ app.get('/home', function (req, res) {
             var all_crypto = []
 
             for (i = 0; i < crypto_name.length; i++) {
-                all_crypto.push({ 'crypto_name': parseFloat(crypto_name[i]).toFixed(5), 'crypto_price': parseFloat(crypto_price[i]).toFixed(5) })
+                all_crypto.push({ 'crypto_name': crypto_name[i], 'crypto_price': parseFloat(crypto_price[i]).toFixed(5) })
             }
 
             for (i = 0; i < holdings.length; i++) {
                 for (j = 0; j < all_crypto.length; j++) {
                     if (all_crypto[j].crypto_name == holdings[i]) {
-                        cryptoholdings.push({ 'crypto_name': holdings[i], 'crypto_amount': parseFloat(amount[i]).toFixed(2), 'crypto_cost': parseFloat(cost[i]).toFixed(5), 'crypto_price': parseFloat(all_crypto[j].crypto_price).toFixed(5), 'crypto_value': parseFloat(amount[i] * all_crypto[j].crypto_price).toFixed(5), 'crypto_profit': parseFloat(amount[i] * (all_crypto[j].crypto_price - cost[i])).toFixed(5) })
+                        cryptoholdings.push({
+                            'crypto_name': holdings[i], 'crypto_amount: parseFloat(amount[i]).toFixed(2), 'crypto_cost': parseFloat(cost[i]).toFixed(5), 'crypto_price': parseFloat(all_crypto[j].crypto_price).toFixed(5), 'crypto_value': parseFloat(amount[i] * all_crypto[j].crypto_price).toFixed(5), 'crypto_profit': parseFloat(amount[i] * (all_crypto[j].crypto_price - cost[i])).toFixed(5) })
                     }
                 }
-            }
+                }
 
-            sort_crypto_by_name(all_crypto);
-            sort_crypto_by_name(cryptoholdings);
-            context.all_crypto = all_crypto
-            context.cryptoholdings = cryptoholdings
-            res.render('login', context);
-        }
+                sort_crypto_by_name(all_crypto);
+                sort_crypto_by_name(cryptoholdings);
+                context.all_crypto = all_crypto
+                context.cryptoholdings = cryptoholdings
+                res.render('login', context);
+            }
 
         );
 
