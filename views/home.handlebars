@@ -1,75 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Login Form Tutorial</title>
-    <style>
-        body {
-            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-            font-size: 18px;
-            font-weight: 300;
-            color: white;
-            overflow-x: hidden;
-            min-height: 100vh;
-            height: 100%;
-            position: relative;
-            background: #222222;
-        }
-
-        .login-form {
-            width: 300px;
-            margin: 0 auto;
-            font-family: Tahoma, Geneva, sans-serif;
-        }
-
-        .login-form h1 {
-            text-align: center;
-            color: #4d4d4d;
-            font-size: 24px;
-            padding: 20px 0 20px 0;
-        }
-
-        .login-form input[type="password"],
-        .login-form input[type="text"] {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #dddddd;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
-
-        .login-form input[type="submit"] {
-            width: 100%;
-            padding: 15px;
-            background-color: #535b63;
-            border: 0;
-            box-sizing: border-box;
-            cursor: pointer;
-            font-weight: bold;
-            color: #ffffff;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
-    <div class="login-form">
-        <h1>Login Form</h1>
-        <form action="auth" method="POST">
-            <input type="text" name="username" placeholder="username" required>
-            <input type="password" name="password" placeholder="password" required>
-            <input type="submit">
-        </form>
+
+
+    <div class="login-box">
+        <br>
+        <div class="login-title">
+            CryptoTracker Login
+        </div>
+
+        <div class="login-form">
+            <form action="auth" method="POST">
+
+                <label class="form-label">USERNAME</label><br>
+                <input type="text" name="username" required><br>
+                <label class="form-label">PASSWORD</label><br>
+                <input type="password" name="password" required><br>
+                <button type="submit" class="btn">LOGIN</button>
+                <div class="loginmsg">
+
+                </div>
+            </form>
+        </div>
+
+
     </div>
 
-    {{{status_msg}}}
-    <br>
-
     <a href="/register">Click here to create account</a>
-
-
-
 </body>
-
 
 </html>
