@@ -61,6 +61,7 @@
         var tr_set = document.getElementsByTagName("tr");
         for (var i = 0; i < tr_set.length; i++) {
             var records = tr_set[i]
+            console.log(records)
             for (var j = 0; j < records.length; j++) {
                 console.log(records[j].textContent)
             }
@@ -76,12 +77,12 @@
                     csv += "\n";
                 });
 
-
+*/
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
         hiddenElement.target = '_blank';
         hiddenElement.download = 'people.csv';
         hiddenElement.click();
-        */
+
     }
 </script>
