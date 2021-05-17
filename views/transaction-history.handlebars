@@ -58,15 +58,21 @@
                 ];
         
         */
-        var data = document.getElementsByTagName("td");
-        console.log(data)
+        var elements = document.getElementsByTagName("td");
+        for (var i = 0; i < elements.length; i++) {
+            console.log(elements[i].textContent)
+        }
 
-        var csv = 'Name,Title\n';
-        data.forEach(function (row) {
-            csv += row.join(',');
-            csv += "\n";
-        });
 
+
+
+        /*
+                var csv = 'Name,Title\n';
+                data.forEach(function (row) {
+                    csv += row.join(',');
+                    csv += "\n";
+                });
+        */
         //console.log("Hello");
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
