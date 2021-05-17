@@ -354,7 +354,7 @@ app.get('/transaction-history', function (req, res) {
 function sort_history(transaction_history) {
     for (var i = 0; i < transaction_history.length; i++) {
         for (var j = 0; j < (transaction_history.length - i - 1); j++) {
-            if (transaction_history[j].date > transaction_history[j + 1].date]) {
+            if (transaction_history[j].date > transaction_history[j + 1].date) {
                 var temp = transaction_history[j]
                 transaction_history[j] = transaction_history[j + 1]
                 transaction_history[j + 1] = temp
