@@ -157,7 +157,7 @@ app.get('/home', function (req, res) {
             for (i = 0; i < holdings.length; i++) {
                 for (j = 0; j < all_crypto.length; j++) {
                     if (all_crypto[j].crypto_name == holdings[i]) {
-                        cryptoholdings.push({ 'holdings': holdings[i], 'amount': amount[i], 'cost': cost[i], 'price': all_crypto[j].crypto_price, 'value': amount[i] * all_crypto[j].crypto_price, 'profit': amount[i] * (all_crypto[j].crypto_price - cost[i]) })
+                        cryptoholdings.push({ 'crypto_name': holdings[i], 'crypto_amount': amount[i], 'crypto_cost': cost[i], 'crypto_price': all_crypto[j].crypto_price, 'crypto_value': amount[i] * all_crypto[j].crypto_price, 'crypto_profit': amount[i] * (all_crypto[j].crypto_price - cost[i]) })
                     }
                 }
             }
@@ -185,7 +185,7 @@ app.get('/buy-sell', function (req, res) {
         var holding_amount_list = []
 
         for (i = 0; i < user_info[1].holdings.length; i++) {
-            holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
+            holding_amount_list.push({ 'crypto_name': user_info[1].holdings[i], 'crypto_amount': user_info[1].amount[i] })
         }
 
         context.holding_amount_list = holding_amount_list
@@ -242,7 +242,7 @@ app.post('/purchase-order', function (req, res) {
         var holding_amount_list = []
 
         for (i = 0; i < user_info[1].holdings.length; i++) {
-            holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
+            holding_amount_list.push({ 'crypto_name': user_info[1].holdings[i], 'crypto_amount': user_info[1].amount[i] })
         }
 
         context.holding_amount_list = holding_amount_list
@@ -301,7 +301,7 @@ app.post('/sell-order', function (req, res) {
             var holding_amount_list = []
 
             for (i = 0; i < user_info[1].holdings.length; i++) {
-                holding_amount_list.push({ 'holding': user_info[1].holdings[i], 'amount': user_info[1].amount[i] })
+                holding_amount_list.push({ 'crypto_name': user_info[1].holdings[i], 'crypto_amount': user_info[1].amount[i] })
             }
 
             if (profit_sold > 0) {
@@ -335,7 +335,7 @@ app.get('/transaction-history', function (req, res) {
         //console.log(user_info[1].history)
 
         for (i = 0; i < user_info[1].history.length; i++) {
-            transaction_history.push({ 'date': user_info[1].history[i][4], 'order-type': user_info[1].history[i][0], 'holding': user_info[1].history[i][1], 'amount': user_info[1].history[i][2], 'price': user_info[1].history[i][3] })
+            transaction_history.push({ 'date': user_info[1].history[i][4], 'order-type': user_info[1].history[i][0], 'crypto_name': user_info[1].history[i][1], 'crypto_amount': user_info[1].history[i][2], 'crypto_price': user_info[1].history[i][3] })
         }
         sort_history(transaction_history);
         context.transaction_history = transaction_history
