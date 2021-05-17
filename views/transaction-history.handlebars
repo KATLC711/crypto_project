@@ -58,9 +58,12 @@
                 ];
         
         */
-        var elements = document.getElementsByTagName("td");
-        for (var i = 0; i < elements.length; i++) {
-            console.log(elements[i].textContent)
+        var tr_set = document.getElementsByTagName("tr");
+        for (var i = 0; i < tr_set.length; i++) {
+            var records = tr_set[i]
+            for (var j = 0; j < records.length; i++) {
+                console.log(records[j].textContent)
+            }
         }
 
 
