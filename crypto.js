@@ -161,7 +161,7 @@ app.get('/home', function (req, res) {
                     }
                 }
             }
-            console.log(all_crypto);
+
             sort_crypto_by_name(all_crypto);
             context.all_crypto = all_crypto
             context.cryptoholdings = cryptoholdings
