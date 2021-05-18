@@ -78,7 +78,7 @@ app.get('/about-us', function (req, res) {
 });
 
 
-app.post('/create_acount', function (req, res) {
+app.post('/create_account', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
     var password2 = req.body.password2;
