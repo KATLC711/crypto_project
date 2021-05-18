@@ -1,6 +1,7 @@
 body {
     background:#151b29;
     font-family: 'Roboto', sans-serif;
+    transition: all 1s;
 }
 
 .header {
