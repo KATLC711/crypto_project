@@ -1,7 +1,7 @@
 body {
     background:#151b29;
     font-family: 'Roboto', sans-serif;
-    transition: all 3s;
+    transition: 3s;
 }
 
 
@@ -80,7 +80,7 @@ color: #ECF0F5;
     padding: 0.5em 0.5em;
     font-size: 10px;
     font-weight: bold;
-    transition: all 0.25s;
+    transition:  0.25s;
 }
 
 
