@@ -94,8 +94,8 @@ color: #ECF0F5;
     
 }
 
-
 .loginmsg {
-height:25px;
-
+    magin-top:15px;
+    height:25px;
+    color: red;
 }
