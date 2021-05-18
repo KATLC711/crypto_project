@@ -1,59 +1,42 @@
-<h3>Here are your cryptocurrency holdings.</h3>
-<table border="border: 1px solid #333">
-    <thead>
-        <tr>
-            <th>Crypto Name</th>
-            <th>Amount</th>
-            <th>Price</th>
-            <th>Value</th>
-            <th>Cost</th>
-            <th>Profit</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each cryptoholdings}}
-        <tr>
-            <td>{{this.crypto_name}}</td>
-            <td>{{this.crypto_amount}}</td>
-            <td>{{this.crypto_price}}</td>
-            <td>{{this.crypto_value}}</td>
-            <td>{{this.crypto_cost}}</td>
-            <td>{{this.crypto_profit}}</td>
-        </tr>
-        {{/each}}
-    </tbody>
+<!DOCTYPE html>
+<html lang="en">
 
-</table>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Login Page</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
 
+<body>
 
+    <div class="login-box">
+        <br>
+        <div class="login-title">
+            CryptoTracker Login
+        </div>
 
-<h3>Crypto Prices</h3>
-<table border="border: 1px solid #333">
-    <thead>
-        <tr>
-            <th>Crypto</th>
-            <th>price</th>
+        <div class="login-form">
+            <form action="auth" method="POST">
 
-        </tr>
-    </thead>
-    <tbody>
-        {{#each all_crypto}}
-        <tr>
-            <td>{{this.crypto_name}}</td>
-            <td>{{this.crypto_price}}</td>
+                <label class="form-label">USERNAME</label><br>
+                <input type="text" name="username" required><br>
+                <label class="form-label">PASSWORD</label><br>
+                <input type="password" name="password" required><br>
+                <button type="submit" class="btn">LOGIN</button>
+                <button type="button" onClick="location.href='register'" class="btn">REGISTER</button>
+                <div class="loginmsg">
+                    {{{status_msg}}}
+                </div>
+            </form>
 
-        </tr>
-        {{/each}}
-    </tbody>
-
-</table>
+        </div>
 
 
 
-<a href="/about-us">Click here to about us</a>
+    </div>
 
-<a href="/buy-sell">Click here to purchase</a>
+</body>
 
-<a href="/transaction-history">Click here to transaction history</a>
-
-<a href="/">Click here to logout</a>
+</html>

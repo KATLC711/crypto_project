@@ -59,7 +59,7 @@ var crypto_list = ['BTC', 'ETH', 'BNB', 'VET', 'LINK', 'ADA', 'XLM']
 
 app.get('/', function (req, res) {
     req.session.loggedin = false
-    res.render('home');
+    res.render('login');
 });
 
 
@@ -94,7 +94,7 @@ app.post('/create_account', function (req, res) {
         var context = []
         context.status_msg = 'Account Created.'
 
-        res.render('home', context)
+        res.render('login', context)
     } else if (password != password2) {
         var context = []
         context.status_msg = 'Password Entries are different.'
@@ -116,16 +116,18 @@ app.post('/auth', function (req, res) {
     if (user_info[0] == true) {
         var context = user_info
         req.session.loggedin = true
-        res.redirect('/home')
+        res.redirect('/homepage')
     } else {
-        res.render('relogin')
+        var context = []
+        context.status_msg = 'Wrong Credentials.'
+        res.render('login', context)
     }
 });
 
 
 
 
-app.get('/home', function (req, res) {
+app.get('/homepage', function (req, res) {
 
     if (req.session.loggedin) {
 
@@ -178,7 +180,7 @@ app.get('/home', function (req, res) {
             sort_crypto_by_name(cryptoholdings);
             context.all_crypto = all_crypto
             context.cryptoholdings = cryptoholdings
-            res.render('login', context);
+            res.render('homepage', context);
         }
 
         );
