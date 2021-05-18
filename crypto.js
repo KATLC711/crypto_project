@@ -299,6 +299,14 @@ app.post('/sell-order', function (req, res) {
 
         if (crypto_amount_sold > crypto_on_hand) {
             context.status_msg_sell = "Exceeds volumne on hand"
+
+
+            var holding_amount_list = []
+
+            for (i = 0; i < user_info[1].holdings.length; i++) {
+                holding_amount_list.push({ 'crypto_name': user_info[1].holdings[i], 'crypto_amount': user_info[1].amount[i] })
+            }
+            context.holding_amount_list = holding_amount_list
             res.render('buy-sell', context);
         } else {
             user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
