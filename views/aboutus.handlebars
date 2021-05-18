@@ -1,101 +1,140 @@
-<style>
-    .mySlides {
-        display: none;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>About us
-</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/aboutus.css">
 
-<h2>About the Developer</h2>
-<p>
-    Hello! My name is Kevin Cheung, the developer of this website. I live in Dallas, Texas. I am currently a part-time
-    student of the postbaccalaureate computer science online program at Oregon State University. I also work as an
-    full-time actuarial analyst in an insurance company.
+</head>
 
-</p>
-
-<p>
-    In my free time, I enjoy cycling, watching TV shows, and spending time with my dog, Petey
-
-</p>
-
-<br>
-
-<div class="slideshow" width="500px" height="500px">
-    <img class="PeteySlides" src="/photo/petey_1.jpg" width=20% height=20%>
-    <img class="PeteySlides" src="/photo/petey_2.jpg" width=20% height=20%>
-    <img class="PeteySlides" src="/photo/petey_3.jpg" width=20% height=20%>
-    <img class="PeteySlides" src="/photo/petey_4.jpg" width=20% height=20%>
-    <img class="PeteySlides" src="/photo/petey_5.jpg" width=20% height=20%>
-
-    <button class="slideshow" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="slideshow" onclick="plusDivs(1)">&#10095;</button>
-</div>
+<body>
 
 
+    <div class="header">
+        <div><a href="/homepage">Homepage</a></div>
+        <div><a href="/buy-sell">Buy/Sell Order</a></div>
+        <div><a href="/transaction-history">Transaction History</a></div>
+        <div><a href="/about-us">About Us</a></div>
+        <div><a href="/">Logout</a></div>
+    </div>
 
+    <div class="content">
+        <h2 class="content-title">About Developer</h2>
+        <hr>
+        <p>
+            Hello! My name is Kevin Cheung, the developer of this website. I live in Dallas, Texas. I am currently a
+            part-time
+            student of the postbaccalaureate computer science online program at Oregon State University. My goal is to
+            earn an graduate degree after the program.I also work as an full-time actuarial analyst in an insurance
+            company.In my free time, I enjoy cycling, watching TV shows, and
+            spending time with my dog, Petey.
 
+        </p>
 
+        <div class="slide-main">
 
+            <div class="slide-button-left">
+                <button class="btn" onclick="plusDivs(-1)">&#10094;</button>
+            </div>
 
+            <div class="slideshow">
 
+                <img class="PeteySlides" src="C:/Users/hayct/Desktop/style/photo/petey_1.jpg">
+                <img class="PeteySlides" src="C:/Users/hayct/Desktop/style/photo/petey_2.jpg">
+                <img class="PeteySlides" src="C:/Users/hayct/Desktop/style/photo/petey_3.jpg">
+                <img class="PeteySlides" src="C:/Users/hayct/Desktop/style/photo/petey_4.jpg">
+                <img class="PeteySlides" src="C:/Users/hayct/Desktop/style/photo/petey_5.jpg">
 
+            </div>
 
-<h2>About the website</h2>
+            <div class="slide-button-right">
+                <button class="btn" onclick="plusDivs(1)">&#10095;</button>
+            </div>
 
+        </div>
 
-<p>This website is designed to help uesrs to keep track of their cryptocurrency portfolio from different exchanges.
-    Users need to provide their transaction history to the server and the server will returns the portfolio's current
-    performance.
-</p>
-
-
-<p>The current features:
-<ul>
-    <li>Extract the cryptocurrency price</li>
-    <li>Caluclate the portfolio profit</li>
-    <li>Enter the transaction history</li>
-</ul>
-</p>
-
-
-<p>The future features:
-<ul>
-    <li>Auto-refresh for the crypto price</li>
-    <li>Keep track of the portfolio's historical movement</li>
-    <li>Create API to make crypto order in this website</li>
-</ul>
-</p>
-
-
-<a href="/home">Click here to home</a>
+    </div>
 
 
 
+    <div class="content">
+        <h2 class="content-title">About the website</h2>
+        <hr>
+        <p>This website is designed to help uesrs to keep track of their cryptocurrency portfolio from different
+            exchanges.
+            Users need to provide their transaction history to the server and the server will returns the
+            portfolio's
+            current
+            performance.
+        </p>
 
 
-<script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
+        <p>The current features:</p>
+        <ul>
+            <li>Extract the cryptocurrency price</li>
+            <li>Caluclate the portfolio profit</li>
+            <li>Enter the transaction history</li>
+        </ul>
 
-    var refresh = window.setInterval(function () {
-        plusDivs(1)
-    }, 5000);
 
 
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
-    }
+        <p>The future features:</p>
+        <ul>
+            <li>Auto-refresh for the crypto price</li>
+            <li>Keep track of the portfolio's historical movement</li>
+            <li>Create API to make crypto order in this website</li>
+        </ul>
 
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("PeteySlides");
-        if (n > x.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = x.length }
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <h2>About the website</h2>
+
+
+
+
+
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        var refresh = window.setInterval(function () {
+            plusDivs(1)
+        }, 5000);
+
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
         }
-        x[slideIndex - 1].style.display = "block";
-    }
-</script>
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("PeteySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+
+
+</body>
+
+</html>
