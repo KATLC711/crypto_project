@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html>
-<style>
-    .purchase-form {
-        border: 5px outset #2a6592;
-    }
 
-    .sell-form {
-        border: 5px outset #2a6592;
-    }
-</style>
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="buy-sell.css">
+</head>
 
 <body>
+    <div class="header">
+        <div><a href="/homepage">Homepage</a></div>
+        <div><a href="/buy-sell">Buy/Sell Order</a></div>
+        <div><a href="/transaction-history">Transaction Order</a></div>
+        <div><a href="/about-us">About Us</a></div>
+        <div><a href="/">Logout</a></div>
+    </div>
 
 
+    <div class="content">
 
-    <h2>Purchase Order</h1>
-        <div class="purchase-form">
+        <div class="content-children">
 
-            <form action="purchase-order" method="POST">
-                <legend>Cryptocurrency:</legend>
-                <input list="crypto_name" name="crypto_name">
-                <datalist id="crypto_name">
-                    <option value="ADA">
-                    <option value="BNB">
-                    <option value="BTC">
-                    <option value="ETH">
-                    <option value="LINK">
-                    <option value="VET">
-                    <option value="XLM">
-                </datalist>
-                </input>
-                <legend>Amount:</legend>
-                <input type="number" id="amount" name="amount" step="0.000001" min=0>
-                <legend>Unit Cost:</legend>
-                <input type="number" id="cost" name="cost" step="0.000001" min=0>
-                <legend>Transaction Date:</legend>
-                <input type="date" id="date" name="date" max='2999-12-31'>
-                <br>
-                <br>
-                <input type="submit">
-            </form>
-            {{{status_msg_purchase}}}
+            <h1 class="column-title">Purchase Order</h1>
+            <div class="purchase-form">
+
+                <form action="purchase-order" method="POST">
+                    <legend>Cryptocurrency:</legend>
+                    <input list="crypto_name" name="crypto_name">
+                    <datalist id="crypto_name">
+                        <option value="ADA">
+                        <option value="BNB">
+                        <option value="BTC">
+                        <option value="ETH">
+                        <option value="LINK">
+                        <option value="VET">
+                        <option value="XLM">
+                    </datalist>
+                    </input>
+                    <legend>Amount:</legend>
+                    <input type="number" id="amount" name="amount" step="0.000001" min=0>
+                    <legend>Unit Cost:</legend>
+                    <input type="number" id="cost" name="cost" step="0.000001" min=0>
+                    <legend>Transaction Date:</legend>
+                    <input type="date" id="date" name="date" max='2999-12-31'>
+                    <br>
+                    <button type="submit" class="btn">SUBMIT</button>
+                </form>
+                <div class="statusmsg">
+                    {{{status_msg_purchase}}}
+                </div>
+            </div>
+
+
         </div>
 
+        <div class="content-children">
 
-
-        <h2>Sell Order</h1>
+            <h1 class="column-title">Sell Order</h1>
             <div class="sell-form">
 
                 <form action="sell-order" method="POST">
@@ -63,17 +75,24 @@
                     <legend>Transaction Date:</legend>
                     <input type="date" id="date" name="date" max='2999-12-31'>
                     <br>
-                    <br>
-
-                    <input type="submit">
+                    <button type="submit" class="btn">SUBMIT</button>
                 </form>
-                {{{status_msg_sell}}}
+                <div class="statusmsg">
+                    {{{status_msg_sell}}}
+                </div>
+
             </div>
 
+        </div>
 
 
-            <br>
-            <a href="/home">Click here to home</a>
+    </div>
+
+
+
+
+
+
 </body>
 
 </html>
