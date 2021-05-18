@@ -81,7 +81,8 @@ app.get('/about-us', function (req, res) {
 app.post('/create_acount', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
-    if (check_userid(username)) {
+    var password2 = req.body.password2;
+    if (check_userid(username) && password == password2) {
         var new_user = new Object()
         new_user.username = username
         new_user.password = password
@@ -93,6 +94,10 @@ app.post('/create_acount', function (req, res) {
         var context = []
         context.status_msg = 'Account Created.'
 
+        res.render('home', context)
+    } else if (password != password2) {
+        var context = []
+        context.status_msg = 'Password Entries are different.'
         res.render('home', context)
     } else {
         var context = []
