@@ -98,11 +98,11 @@ app.post('/create_account', function (req, res) {
     } else if (password != password2) {
         var context = []
         context.status_msg = 'Password Entries are different.'
-        res.render('home', context)
+        res.render('register', context)
     } else {
         var context = []
         context.status_msg = 'User ID exists. Account creation failed.'
-        res.render('home', context)
+        res.render('register', context)
     }
 });
 
