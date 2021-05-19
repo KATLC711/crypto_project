@@ -2,16 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>CSS Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/homepage.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoTracker - Homepage</title>
+    <link rel="stylesheet" href="transaction-history.css">
 </head>
 
 <body>
-
-
-
 
     <div class="header">
         <div><a href="/homepage">Homepage</a></div>
@@ -21,75 +19,221 @@
         <div><a href="/">Logout</a></div>
     </div>
 
-
-
     <div class="content">
 
-        <div class="content-children">
+        <h2 class="content-title">Transaction History</h2>
+        <hr>
 
-            <div class="column-title">Your Portfolio</div>
+        <div class="scroller">
             <table>
                 <thead>
                     <tr>
+                        <th class="tbl-header">Transaction Date</th>
+                        <th class="tbl-header">Order Type</th>
                         <th class="tbl-header">Crypto Name</th>
                         <th class="tbl-header">Amount</th>
                         <th class="tbl-header">Price</th>
-                        <th class="tbl-header">Value</th>
-                        <th class="tbl-header">Cost</th>
-                        <th class="tbl-header">Profit</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {{#each cryptoholdings}}
                     <tr>
-                        <td class="tbl-content">{{this.crypto_name}}</td>
-                        <td class="tbl-content">{{this.crypto_amount}}</td>
-                        <td class="tbl-content">{{this.crypto_price}}</td>
-                        <td class="tbl-content">{{this.crypto_value}}</td>
-                        <td class="tbl-content">{{this.crypto_cost}}</td>
-                        <td class="tbl-content">{{this.crypto_profit}}</td>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
                     </tr>
-                    {{/each}}
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tbl-content">1/1/2020</td>
+                        <td class="tbl-content">Buy</td>
+                        <td class="tbl-content">ETH</td>
+                        <td class="tbl-content">5000</td>
+                        <td class="tbl-content">1432.50</td>
+                    </tr>
+
+
 
                 </tbody>
 
             </table>
         </div>
 
-        <div class="content-children">
-            <div class="column-title">Real-Time Quotes</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="tbl-header">Crypto Name</th>
-                        <th class="tbl-header">Price</th>
+        <button class="csv-btn" onclick="download_csv()">Download CSV</button>
 
-                    </tr>
-                </thead>
-                <tbody>
-
-                    {{#each all_crypto}}
-                    <tr>
-                        <td class="tbl-content">{{this.crypto_name}}</td>
-                        <td class="tbl-content">{{this.crypto_price}}</td>
-
-                    </tr>
-                    {{/each}}
-                </tbody>
-
-            </table>
-        </div>
 
     </div>
 
-
-
-
-    <div class="footer">
-        <p>Footer</p>
-    </div>
 
 </body>
 
 </html>
+
+
+
+
+
+
+<script>
+
+
+    function download_csv() {
+
+
+        var csv = '';
+        var tr_set = document.getElementsByTagName("tr");
+        for (var i = 0; i < tr_set.length; i++) {
+            var records = tr_set[i]
+            console.log(records)
+            for (var j = 0; j < records.children.length; j++) {
+                console.log(records.children[j].textContent)
+                csv += records.children[j].textContent + ','
+            }
+            csv = csv.slice(0, -1)
+            csv += "\n";
+        }
+
+        console.log(csv)
+
+
+
+        var hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'transaction-history.csv';
+        hiddenElement.click();
+
+    }
+</script>

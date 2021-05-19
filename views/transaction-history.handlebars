@@ -1,48 +1,65 @@
-<style>
-    .scroller {
-        width: 300px;
-        height: 100px;
-        overflow-y: scroll;
-        scrollbar-color: rebeccapurple green;
-        scrollbar-width: thin;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoTracker - Transaction History</title>
+    <link rel="stylesheet" href="/css/transaction-history.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div><a href="/homepage">Homepage</a></div>
+        <div><a href="/buy-sell">Buy/Sell Order</a></div>
+        <div><a href="/transaction-history">Transaction History</a></div>
+        <div><a href="/about-us">About Us</a></div>
+        <div><a href="/">Logout</a></div>
+    </div>
+
+    <div class="content">
+
+        <h2 class="content-title">Transaction History</h2>
+        <hr>
+
+        <div class="scroller">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="tbl-header">Transaction Date</th>
+                        <th class="tbl-header">Order Type</th>
+                        <th class="tbl-header">Crypto Name</th>
+                        <th class="tbl-header">Amount</th>
+                        <th class="tbl-header">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="tbl-content">{{this.date}}</td>
+                        <td class="tbl-content">{{this.order-type}}</td>
+                        <td class="tbl-content">{{this.crypto_name}}</td>
+                        <td class="tbl-content">{{this.crypto_amount}}</td>
+                        <td class="tbl-content">{{this.crypto_price}}</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <button class="csv-btn" onclick="download_csv()">Download CSV</button>
 
 
-
-<h1>Transaction History</h1>
-
-
-<div class="scroller">
-    <table border="border: 1px solid #333">
-        <thead>
-            <tr>
-                <th>Transaction Date</th>
-                <th>Order Type</th>
-                <th>Crypto Name</th>
-                <th>Amount</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each transaction_history}}
-            <tr>
-                <td>{{this.date}}</td>
-                <td>{{this.order-type}}</td>
-                <td>{{this.crypto_name}}</td>
-                <td>{{this.crypto_amount}}</td>
-                <td>{{this.crypto_price}}</td>
-            </tr>
-            {{/each}}
-        </tbody>
-
-    </table>
-</div>
-
-<button onclick="download_csv()">Download CSV</button>
+    </div>
 
 
-<a href="/home">Click here to home</a>
+</body>
+
+</html>
+
 
 
 

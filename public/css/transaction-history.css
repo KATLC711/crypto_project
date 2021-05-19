@@ -1,0 +1,148 @@
+body {
+    background:#151b29;
+    font-family: 'Roboto', sans-serif;
+    transition: all 1s;
+}
+
+.header {
+    
+    margin : 30px;
+    padding: 10px;
+    background-color : #ffffff;
+    opacity:0.8;
+    border-radius:15px;
+    transition: all 1s;
+    justify-content: space-around;
+    display:flex;
+}
+
+
+a {
+
+    color:#040334;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    text-decoration:none;
+}
+
+
+a:hover {
+
+    color:#183d82;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    box-shadow: 0 0.5em 0.5em -0.25em #183d82;
+    cursor:pointer;
+    transition: all 0.25s;
+}
+
+
+.scroller {
+    margin : 30px;
+    height:  600px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
+
+
+
+.content {
+ 
+    margin : 30px;
+    background-color : #ffffff;
+    opacity : 0.8;
+    padding: 25px;
+    border-radius:15px;
+}
+
+
+.content-title {
+
+    text-align: center;
+    color:#183d82;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: bold;
+
+}
+
+hr {
+    width : 75%;
+}
+
+
+
+
+
+table {
+
+    margin-top : 20px;
+    
+    width:100%;
+
+    text-align: center;
+
+    table-layout: fixed;
+
+
+}
+
+
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+ }
+
+
+ .tbl-content{
+  height:30px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  color: #040334;
+   text-align: center;
+  text-transform: uppercase;
+}
+
+td{
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  color: #040334;
+  border-bottom: solid 1px 040334(255,255,255,0.1);
+}
+
+.csv-btn {
+    background:none;
+    height:auto;
+    width:150px;
+    color:#040334;
+    border: 5px solid;
+    border-radius: 5px;
+    padding: 0.5em 0.5em;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.25s;
+}
+
+
+.csv-btn:hover {
+
+    color:#151472;
+    box-shadow: 0 0.5em 0.5em -0.25em #151472;
+    transform: translateY(-0.5em);
+    cursor:pointer;
+    
+}
