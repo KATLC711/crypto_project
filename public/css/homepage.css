@@ -34,7 +34,7 @@ body {
 
 .scroller {
     margin : 30px;
-    height:  600px;
+    height:  750px;
     overflow-y: scroll;
     scrollbar-color: rebeccapurple green;
     scrollbar-width: thin;
