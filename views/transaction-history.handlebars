@@ -36,7 +36,7 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    {{#each transaction_history}}
                     <tr>
                         <td class="tbl-content">{{this.date}}</td>
                         <td class="tbl-content">{{this.order-type}}</td>
@@ -44,6 +44,7 @@
                         <td class="tbl-content">{{this.crypto_amount}}</td>
                         <td class="tbl-content">{{this.crypto_price}}</td>
                     </tr>
+                    {{/eaach}}
 
                 </tbody>
 
