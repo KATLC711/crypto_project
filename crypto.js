@@ -54,7 +54,7 @@ var nokkiu = {
 cred_info.push(cheungke)
 cred_info.push(nokkiu)
 
-var crypto_list = ['BTC', 'ETH', 'BNB', 'VET', 'LINK', 'ADA', 'XLM']
+var crypto_list = ['BTC', 'ETH', 'BNB', 'VET', 'LINK', 'ADA', 'XLM', 'MATIC', 'DOT', 'SOL', 'INJ', 'ENJ', 'LTC', 'TRX', 'CHZ', 'AVAX', 'ATOM', 'WIN', 'DOGE', 'USDT', 'ETC']
 
 
 app.get('/', function (req, res) {
