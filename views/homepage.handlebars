@@ -25,36 +25,73 @@
 
     <div class="content">
 
-        <div class="content-children scroller">
+        <div class="content-children">
 
             <div class="column-title">Your Portfolio</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="tbl-header">Crypto Name</th>
-                        <th class="tbl-header">Amount</th>
-                        <th class="tbl-header">Price</th>
-                        <th class="tbl-header">Value</th>
-                        <th class="tbl-header">Cost</th>
-                        <th class="tbl-header">Profit</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="scroller-half">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="tbl-header">Crypto Name</th>
+                            <th class="tbl-header">Amount</th>
+                            <th class="tbl-header">Price</th>
+                            <th class="tbl-header">Value</th>
+                            <th class="tbl-header">Cost</th>
+                            <th class="tbl-header">Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    {{#each cryptoholdings}}
-                    <tr>
-                        <td class="tbl-content">{{this.crypto_name}}</td>
-                        <td class="tbl-content">{{this.crypto_amount}}</td>
-                        <td class="tbl-content">{{this.crypto_price}}</td>
-                        <td class="tbl-content">{{this.crypto_value}}</td>
-                        <td class="tbl-content">{{this.crypto_cost}}</td>
-                        <td class="tbl-content">{{this.crypto_profit}}</td>
-                    </tr>
-                    {{/each}}
+                        {{#each cryptoholdings}}
+                        <tr>
+                            <td class="tbl-content">{{this.crypto_name}}</td>
+                            <td class="tbl-content">{{this.crypto_amount}}</td>
+                            <td class="tbl-content">{{this.crypto_price}}</td>
+                            <td class="tbl-content">{{this.crypto_value}}</td>
+                            <td class="tbl-content">{{this.crypto_cost}}</td>
+                            <td class="tbl-content">{{this.crypto_profit}}</td>
+                        </tr>
+                        {{/each}}
 
-                </tbody>
+                    </tbody>
 
-            </table>
+                </table>
+            </div>
+
+
+
+            <div class="content-image">
+                <div class="column-title">New Coins available!</div>
+
+
+                <div class="slide-main">
+
+                    <div class="slide-button-left">
+                        <button class="btn" onclick="plusDivs(-1)">&#10094;</button>
+                    </div>
+                    <div class="slideshow">
+
+
+
+                        <img class="NewCoins" src="/photo/cardano.svg">
+                        <img class="NewCoins" src="/photo/dogecoin.svg">
+                        <img class="NewCoins" src="/photo/litecoin.svg">
+                        <img class="NewCoins" src="/photo/tether.svg">
+
+
+                    </div>
+
+                    <div class=" slide-button-right">
+                        <button class="btn" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
         </div>
 
         <div class="content-children scroller">

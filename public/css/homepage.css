@@ -146,3 +146,56 @@ td{
     color: #374052;
 
 }
+
+
+
+
+
+.slide-main {
+    display: flex;
+}
+
+.slide-button-right {
+    flex : 1;
+    margin : auto;
+}  
+
+.slide-button-left {
+    flex : 1;
+    margin : auto;
+
+}  
+
+.slide-button-left .btn {
+  position: relative;
+  margin-left : 93%;
+  
+}
+
+
+.slideshow img {
+    flex : 1;
+    height : 100px;
+    padding:10px;
+    margin : auto;
+    object-fit: contain;
+}
+
+.btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+
+.scroller-half {
+    height:  550px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
