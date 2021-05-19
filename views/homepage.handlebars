@@ -96,26 +96,28 @@
 
         <div class="content-children">
             <div class="column-title">Real-Time Quotes</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="tbl-header">Crypto Name</th>
-                        <th class="tbl-header">Price</th>
+            <div class=" scroller">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="tbl-header">Crypto Name</th>
+                            <th class="tbl-header">Price</th>
 
-                    </tr>
-                </thead>
-                <tbody>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    {{#each all_crypto}}
-                    <tr>
-                        <td class="tbl-content">{{this.crypto_name}}</td>
-                        <td class="tbl-content">{{this.crypto_price}}</td>
+                        {{#each all_crypto}}
+                        <tr>
+                            <td class="tbl-content">{{this.crypto_name}}</td>
+                            <td class="tbl-content">{{this.crypto_price}}</td>
 
-                    </tr>
-                    {{/each}}
-                </tbody>
+                        </tr>
+                        {{/each}}
+                    </tbody>
 
-            </table>
+                </table>
+            </div>
         </div>
 
     </div>
