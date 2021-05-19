@@ -100,3 +100,17 @@ color: #ECF0F5;
     height:25px;
     color: red;
 }
+
+
+
+.footer-main {
+    
+    margin : 30px;
+    padding: 10px;
+    background-color : #ffffff;
+    opacity:0.8;
+    border-radius:15px;
+    justify-content: space-around;
+     display:flex;
+
+}
