@@ -158,3 +158,15 @@ letter-spacing: 1px;
     color: #374052;
 
 }
+
+
+.content-description {
+
+    margin : 10px;
+    text-align: center;
+    color:#183d82;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: bold;
+
+}
