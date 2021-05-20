@@ -27,7 +27,7 @@
 
                 <form action="purchase-order" method="POST">
                     <label class="form-label">CRYPTOCURRENCY</label><br>
-                    <input list="crypto_name" name="crypto_name">
+                    <input list="crypto_name" name="crypto_name" required>
                     <datalist id="crypto_name">
                         <option value="ADA">
                         <option value="ATOM">
@@ -54,11 +54,11 @@
                     </input>
                     <br><br>
                     <label class="form-label">AMOUNT</label><br>
-                    <input type="number" id="amount" name="amount" step="0.000001" min=0><br>
+                    <input type="number" id="amount" name="amount" step="0.000001" min=0 required><br>
                     <label class="form-label">UNIT COST</label><br>
-                    <input type="number" id="cost" name="cost" step="0.000001" min=0><br>
+                    <input type="number" id="cost" name="cost" step="0.000001" min=0 required><br>
                     <label class="form-label">TRANSACTION DATE</label><br>
-                    <input type="date" id="date" name="date" max='2999-12-31'><br>
+                    <input type="date" id="date" name="date" max='2999-12-31' required><br>
                     <button type="submit" class="btn">SUBMIT</button>
                 </form>
                 <div class="statusmsg">
@@ -78,16 +78,16 @@
                     <label class="form-label">YOUR CURRENT PORTFOLIO</label><br>
 
                     {{#each holding_amount_list}}
-                    <input type="radio" id={{this.crypto_name}} name="crypto_name" value={{this.crypto_name}}>
+                    <input type="radio" id={{this.crypto_name}} name="crypto_name" value={{this.crypto_name}} required>
                     <label for={{this.crypto_name}}>{{this.crypto_name}}({{this.crypto_amount}})</label><br>
                     {{/each}}
                     <br>
                     <label class="form-label">AMOUNT</label><br>
-                    <input type="number" id="amount" name="amount" step="0.000001" min=0><br>
+                    <input type="number" id="amount" name="amount" step="0.000001" min=0 required><br>
                     <label class="form-label">UNIT COST</label><br>
-                    <input type="number" id="price" name="price" step="0.000001" min=0><br>
+                    <input type="number" id="price" name="price" step="0.000001" min=0 required><br>
                     <label class="form-label">TRANSACTION</label><br>
-                    <input type="date" id="date" name="date" max='2999-12-31'><br>
+                    <input type="date" id="date" name="date" max='2999-12-31' required><br>
                     <button type="submit" class="btn">SUBMIT</button>
                 </form>
                 <div class="statusmsg">
