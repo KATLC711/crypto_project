@@ -339,6 +339,7 @@ app.post('/sell-order', function (req, res) {
             res.render('buy-sell', context);
         } else {
             user_info[1].amount[i] = user_info[1].amount[i] - crypto_amount_sold
+            user_info[1].history.push(['Sell', crypto_name_sold, crypto_amount_sold, crypto_price_sold, crypto_date_sold])
 
             var profit_sold = (crypto_amount_sold * (crypto_price_sold - user_info[1].cost[i])).toFixed(5);
 
@@ -346,7 +347,6 @@ app.post('/sell-order', function (req, res) {
                 user_info[1].amount.splice(i, 1)
                 user_info[1].holdings.splice(i, 1)
                 user_info[1].cost.splice(i, 1)
-                user_info[1].history.push(['Sell', crypto_name_sold, crypto_amount_sold, crypto_price_sold, crypto_date_sold])
             }
 
 
