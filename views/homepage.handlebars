@@ -67,7 +67,7 @@
                 <div class="slide-main">
 
                     <div class="slide-button-left">
-                        <button class="btn" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="btn" onclick="AddSlide(-1)">&#10094;</button>
                     </div>
                     <div class="slideshow">
 
@@ -87,7 +87,7 @@
                     </div>
 
                     <div class=" slide-button-right">
-                        <button class="btn" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="btn" onclick="AddSlide(1)">&#10095;</button>
                     </div>
                 </div>
 
@@ -178,30 +178,30 @@
 
 
     <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
+        var slideno = 1;
+        DisplaySlide(slideno);
 
         var refresh = window.setInterval(function () {
-            plusDivs(1)
+            AddSlide(1)
         }, 5000);
 
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
+        function AddSlide(n) {
+            DisplaySlide(slideno += n);
         }
 
-        function showDivs(n) {
+        function DisplaySlide(n) {
             var i;
-            var x = document.getElementsByClassName("NewCoins");
-            var y = document.getElementsByClassName("CoinSources");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
+            var CoinsGroup = document.getElementsByClassName("NewCoins");
+            var SourceGroup = document.getElementsByClassName("CoinSources");
+            if (n > x.length) { slideno = 1 }
+            if (n < 1) { slideno = x.length }
             for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-                y[i].style.display = "none";
+                CoinsGroup[i].style.display = "none";
+                SourceGroup[i].style.display = "none";
             }
-            x[slideIndex - 1].style.display = "block";
-            y[slideIndex - 1].style.display = "block";
+            CoinsGroup[slideno - 1].style.display = "block";
+            SourceGroup[slideno - 1].style.display = "block";
         }
     </script>
 
