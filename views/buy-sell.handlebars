@@ -29,8 +29,8 @@
 
                 <form action="purchase-order" method="POST">
                     <label class="form-label">CRYPTOCURRENCY</label><br>
-                    <input list="crypto_name" name="crypto_name" required>
-                    <datalist id="crypto_name">
+
+                    <select name="crypto_name" id="crypto_name" required>
                         <option value="ADA">
                         <option value="ATOM">
                         <option value="AVAX">
@@ -52,8 +52,8 @@
                         <option value="VET">
                         <option value="WIN">
                         <option value="XLM">
-                    </datalist>
-                    </input>
+                    </select>
+
                     <br><br>
                     <label class="form-label">AMOUNT</label><br>
                     <input type="number" id="amount" name="amount" step="0.000001" min=0 required><br>
