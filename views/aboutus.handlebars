@@ -162,8 +162,15 @@
         function DisplaySlide(n) {
             var i;
             var PeteyGroup = document.getElementsByClassName("PeteySlides");
-            if (n > PeteyGroup.length) { slideno = 1 }
-            if (n < 1) { slideno = PeteyGroup.length }
+
+            if (n > PeteyGroup.length) {
+                slideno = 1
+            }
+
+            if (n < 1) {
+                slideno = PeteyGroup.length
+            }
+
             for (i = 0; i < PeteyGroup.length; i++) {
                 PeteyGroup[i].style.display = "none";
             }
