@@ -228,6 +228,7 @@ app.get('/buy-sell', function (req, res) {
             holding_amount_list.push({ 'crypto_name': user_info[1].holdings[i], 'crypto_amount': user_info[1].amount[i] })
         }
 
+        sort_crypto_by_name(holding_amount_list)
         context.holding_amount_list = holding_amount_list
         res.render('buy-sell', context);
     } else {
