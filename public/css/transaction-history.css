@@ -170,3 +170,15 @@ td{
     color: #374052;
 
 }
+
+
+
+.sources-main {
+    
+    margin : 30px;
+    padding: 10px;
+    background-color : #ffffff;
+    opacity:0.8;
+    border-radius:15px;
+
+}
