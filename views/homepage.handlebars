@@ -194,9 +194,9 @@
             var i;
             var CoinsGroup = document.getElementsByClassName("NewCoins");
             var SourceGroup = document.getElementsByClassName("CoinSources");
-            if (n > x.length) { slideno = 1 }
-            if (n < 1) { slideno = x.length }
-            for (i = 0; i < x.length; i++) {
+            if (n > CoinsGroup.length) { slideno = 1 }
+            if (n < 1) { slideno = CoinsGroup.length }
+            for (i = 0; i < CoinsGroup.length; i++) {
                 CoinsGroup[i].style.display = "none";
                 SourceGroup[i].style.display = "none";
             }
