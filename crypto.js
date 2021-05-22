@@ -114,6 +114,7 @@ app.post('/create_account', function (req, res) {
         new_user.holdings = []
         new_user.amount = []
         new_user.cost = []
+        new_user.history = []
         cred_info.push(new_user)
         console.log(cred_info)
         var context = []
