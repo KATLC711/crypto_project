@@ -359,6 +359,7 @@ app.post('/sell-order', function (req, res) {
                 context.status_msg_sell = "Sold Successful! You lost $" + Math.abs(profit_sold)
             }
 
+            sort_crypto_by_name(holding_amount_list)
             context.holding_amount_list = holding_amount_list
             res.render('buy-sell', context);
         }
