@@ -194,12 +194,17 @@
             var i;
             var CoinsGroup = document.getElementsByClassName("NewCoins");
             var SourceGroup = document.getElementsByClassName("CoinSources");
-            if (n > CoinsGroup.length) { slideno = 1 }
+
+            if (n > CoinsGroup.length) {
+                slideno = 1
+            }
+
             if (n < 1) { slideno = CoinsGroup.length }
             for (i = 0; i < CoinsGroup.length; i++) {
                 CoinsGroup[i].style.display = "none";
                 SourceGroup[i].style.display = "none";
             }
+
             CoinsGroup[slideno - 1].style.display = "block";
             SourceGroup[slideno - 1].style.display = "block";
         }

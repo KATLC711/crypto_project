@@ -37,7 +37,7 @@
         <div class="slide-main">
 
             <div class="slide-button-left">
-                <button class="btn" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="btn" onclick="AddSide(-1)">&#10094;</button>
             </div>
 
             <div class="slideshow">
@@ -54,7 +54,7 @@
             </div>
 
             <div class="slide-button-right">
-                <button class="btn" onclick="plusDivs(1)">&#10095;</button>
+                <button class="btn" onclick="AddSide(1)">&#10095;</button>
             </div>
 
         </div>
@@ -147,27 +147,27 @@
 
 
     <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
+        var slideno = 1;
+        DisplaySlide(slideno);
 
         var refresh = window.setInterval(function () {
-            plusDivs(1)
+            AddSide(1)
         }, 5000);
 
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
+        function AddSide(n) {
+            DisplaySlide(slideno += n);
         }
 
-        function showDivs(n) {
+        function DisplaySlide(n) {
             var i;
-            var x = document.getElementsByClassName("PeteySlides");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
+            var PeteyGroup = document.getElementsByClassName("PeteySlides");
+            if (n > PeteyGroup.length) { slideno = 1 }
+            if (n < 1) { slideno = PeteyGroup.length }
+            for (i = 0; i < PeteyGroup.length; i++) {
+                PeteyGroup[i].style.display = "none";
             }
-            x[slideIndex - 1].style.display = "block";
+            PeteyGroup[slideno - 1].style.display = "block";
         }
     </script>
 
